@@ -97,7 +97,7 @@ a {
     <body>
 
         <div class="top container-fluid">
-            <img src="logo.png" style="width: 75px; height: 75px;">
+            <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="Home.html">Home</a>
             <a href="Home.html">Profile</a>
             <a href="Home.html">List Teknisi</a>

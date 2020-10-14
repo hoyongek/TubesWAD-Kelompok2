@@ -42,7 +42,7 @@
     <body>
 
         <div class="top container-fluid">
-            <img src="logo.png" style="width: 75px; height: 75px;">
+            <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="Home.html">Home</a>
             <a href="Home.html">Profile</a>
             <a href="Home.html">List Teknisi</a>
@@ -64,7 +64,7 @@
                 <div class="col-sm-4 1">
                     <!--Membuat Card-->
                     <div class="card" style="width: 18rem;">
-                        <img src="1.jpg" class="card-img-top" alt="...">
+                        <img src="gambar\1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <p class="card-text" > <h2> Networking </h2> <br> <h4 style="color: darkcyan;"> $20/Day </h4><hr>
                             
@@ -84,7 +84,7 @@
                 <div class="col-sm-4 2">
                     <!--Membuat Card-->
                     <div class="card" style="width: 18rem;">
-                        <img src="2.jpg" class="card-img-top" alt="...">
+                        <img src="gambar\2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <p class="card-text" > <h2> Komputer </h2> <br> <h4 style="color: darkcyan;"> $15/Day </h4><hr>
                             
@@ -102,7 +102,7 @@
                 <div class="col-sm-4 3">
                     <!--Membuat Card-->
                     <div class="card" style="width: 18rem;">
-                        <img src="3.jpg" class="card-img-top" alt="...">
+                        <img src="gambar\3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                           <p class="card-text" > <h2> Listrik</h2> <br> <h4 style="color: darkcyan;"> $10/Day</h4><hr>
                        
