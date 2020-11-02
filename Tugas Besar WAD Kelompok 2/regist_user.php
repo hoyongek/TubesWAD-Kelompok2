@@ -94,17 +94,28 @@ a {
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
         </div>
-<form action="/action_page.php">
+<form action="kon_regist.php" method="post">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
+    <label for="username"><b>Username</b></label>
+    <input type="text" name="username" placeholder="Enter Username" id="username" required>
+
+    <label for="nama"><b>Full Name</b></label>
+    <input type="text" name="nama" placeholder="Enter Name " id="nama" required>
+
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="no_hp"><b>Phone Number</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="no_hp" id="no_hp" required>
+
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    
+    <label for="psw_repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw_repeat" required>
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
     <button type="submit" class="registerbtn">Register</button>
