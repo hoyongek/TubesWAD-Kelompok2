@@ -1,15 +1,16 @@
 <?php
-$host="localhost";
-$user="root";
-$password="";
-$db="db_technisian";
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "db_technisian";
 
-$kon = mysqli_connect($host,$user,$password,$db);
-if (!$kon){
-	  die("Koneksi gagal:".mysqli_connect_error());
+$kon = mysqli_connect($host, $user, $password, $db);
+if (!$kon) {
+	die("Koneksi gagal:" . mysqli_connect_error());
 }
 
-function querry($query) {
+function querry($query)
+{
 	$result = mysqli_query($kon, $query);
 
 	if (mysqli_num_rows($result) == 1) {
@@ -17,7 +18,7 @@ function querry($query) {
 	}
 
 	$rows = [];
-	while ($row=mysqli_fetch_assoc($result)){
+	while ($row = mysqli_fetch_assoc($result)) {
 		$rows[] = $row;
 	}
 }
