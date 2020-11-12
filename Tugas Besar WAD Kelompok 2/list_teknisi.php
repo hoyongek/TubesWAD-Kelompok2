@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+
+require 'koneksi.php';
+//$perHalaman = 1;
+//$jmlData = count(query("SELECT * FROM tech"));
+//$jmlHalaman = ceil($jmlData / $perHalaman);
+//$halaman = (isset($_GET["jmlHalaman"])) ? $_GET["halaman"] : 1;
+//$awal = ($perHalaman * $halaman) - $perHalaman;
+//$tech = query("SELECT * FROM tech LIMIT $awal, $perHalaman");
+
+?>
 <html>
 
 <head>
@@ -60,9 +71,6 @@
 </head>
 
 <body>
-	<?php
-	include "koneksi.php";
-	?>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<a class="navbar-brand" href="index.php">
 			<img src="gambar\logo.png" style="width: 50px; height: 50px;"> Find Technician
@@ -90,29 +98,18 @@
 			</ul>
 		</div>
 	</nav>
-	<br> <br> <br> <br>
-
-	<!--Batas TOP NAV-->
-	<div class="top container-fluid">
-		<img src="gambar\logo.png" style="width: 75px; height: 75px;">
-		<a href="index.php">Home</a>
-		<a href="profile.php">Profile</a>
-		<a href="list_teknisi.php">List Teknisi</a>
-		<a href="aboutUs.php">About Us</a>
-		<a href="contact.php">Contact</a>
-
-		<form class="search form-inline">
-			<input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			<a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-			<a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-		</form>
-	</div>
-	<!--Batas TOP NAV-->
+	<br> <br> <br>
 
 	<h1 style="text-align: center;" class="display-4">Technician</h1>
+
+	<?php //for ($i = 1; $i <= $jmlHalaman; $i++) : 
+	?>
+
+	<?php //endfor; 
+	?>
+
 	<?php
-	$sum = "0";
+	$sum = "1";
 	$query = mysqli_query($kon, "SELECT * FROM tech") or die("Error Query");
 	?>
 	<div class="container" style="margin-top: 20px;">
@@ -132,15 +129,18 @@
 							<div class="skills">
 								<h6>Skills</h6>
 								<ul>
-									<?php
-									$sav = $data['id'];
-									$query2 = mysqli_query($kon, "SELECT d.name FROM device d
-									INNER JOIN specialist s on s.device_id = d.id
-									LEFT JOIN tech t on t.id = s.tech_id
-									WHERE s.tech_id = '$sav'") or die("Error Query");
-									foreach ($query2 as $value) { ?>
-										<li><?php echo $value['d.name']; ?></li>
-									<?php } ?>
+									<?php //
+									//$sav = $data['id'];
+									//$query2 = mysqli_query($kon, "SELECT d.name FROM device d
+									//INNER JOIN specialist s on s.device_id = d.id
+									//LEFT JOIN tech t on t.id = s.tech_id
+									//WHERE s.tech_id = '$sav'") or die("Error Query");
+									//foreach ($query2 as $value) { 
+									?>
+									<li><?php //echo $value['d.name']; 
+											?></li>
+									<?php //} 
+									?>
 								</ul>
 							</div>
 							<br>
@@ -150,6 +150,28 @@
 						</div>
 					</div>
 				</div><?php $line = "$sum+1"; ?> <?php } ?>
+			<?php
+			if (!$sum > 2) {
+				echo "</div>";
+			}
+			?>
+		</div>
+
+
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item disabled">
+					<a class="page-link" href="#" tabindex="-1">Previous</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
 </body>
 
 </html>
