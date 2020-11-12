@@ -84,11 +84,11 @@ a {
     <body>
         <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
-            <a href="Home.html">Home</a>
-            <a href="Home.html">Profile</a>
-            <a href="Home.html">List Teknisi</a>
-            <a href="Home.html">About Us</a>
-            <a href="Home.html">Contact</a>
+            <a href="index.php">Home</a>
+            <a href="profile.php">Profile</a>
+            <a href="list_teknisi.php">List Teknisi</a>
+            <a href="aboutUs.php">About Us</a>
+            <a href="contact.php">Contact</a>
             <form class="search form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -122,7 +122,7 @@ a {
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="login.php">Sign in</a>.</p>
   </div>
 </form>
 </body>

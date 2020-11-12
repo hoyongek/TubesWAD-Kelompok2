@@ -9,9 +9,61 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+
+    <style>
+			.top {
+				background-color: white;
+				margin-bottom: 10px;  
+			}
+			.top a {
+				padding-left: 20px;
+				font-size: larger;   
+			}
+			.search {
+				float:right;
+				margin-top: 20px;  
+			}
+			body {
+				background-color: #F8F9F9;
+			}
+			.container {
+				margin-top: 20px;
+			}
+			a {
+				color: dodgerblue;
+			}
+			.active a {
+				border-bottom: 2px solid #257CE5;
+            }
+			.mynav a:hover {
+                border-bottom: 2px solid #257CE5;
+            }
+        </style>
+
   </head>
   <body>
-    <form>
+
+  <!--Batas TOP NAV-->
+  <div class="top container-fluid">
+            <img src="gambar\logo.png" style="width: 75px; height: 75px;">
+            <a href="index.php">Home</a>
+            <a href="profile.php">Profile</a>
+            <a href="list_teknisi.php">List Teknisi</a>
+            <a href="aboutUs.php">About Us</a>
+            <a href="contact.php">Contact</a>
+
+            <form class="search form-inline">
+                <input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+                <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+              </form>
+        </div>
+		<!--Batas TOP NAV-->
+
+    
+    <div class="Container" >
+    <form style="margin-left: 200px; margin-right: 200px;">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -23,10 +75,12 @@
         </div>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <label class="form-check-label" for="exampleCheck1">Ingat Saya </label>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
+
+      </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
