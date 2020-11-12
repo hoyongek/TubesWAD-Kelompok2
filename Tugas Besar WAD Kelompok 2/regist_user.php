@@ -58,30 +58,33 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
 .top {
-              background-color: white;
-              margin-bottom: 10px;
+ background-color: white;
+ margin-bottom: 10px;
               
-              
-              
-           }
-           .top a {
-               padding-left: 20px;
-               font-size: larger;
+}
+           
+.top a {
+padding-left: 20px;
+font-size: larger;
                
-           }
-           .search {
-               float:right;
-               margin-top: 20px;
+}
+
+.search {
+float:right;
+margin-top: 20px;
                
-           }
-           .container {
-               margin-top: 20px;
+}
+
+.container {
+margin-top: 20px;
            }
         </style>
     </head>
 
     <body>
+
         <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="index.php">Home</a>
@@ -89,12 +92,10 @@ a {
             <a href="list_teknisi.php">List Teknisi</a>
             <a href="aboutUs.php">About Us</a>
             <a href="contact.php">Contact</a>
-            <form class="search form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
         </div>
-<form action="kon_regist.php" method="post">
+
+
+<form action="regist_user.php" method="POST">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -125,5 +126,44 @@ a {
     <p>Already have an account? <a href="login.php">Sign in</a>.</p>
   </div>
 </form>
+
+<?php
+error_reporting(error_reporting() & ~E_NOTICE) ;
+
+
+//Include file koneksi ke database
+include "koneksi.php";
+
+//menerima nilai dari kiriman form pendaftaran
+$username=$_POST["username"];
+$nama=$_POST["nama"];
+$psw_repeat=$_POST["psw_repeat"];
+$email=$_POST["email"];
+$no_hp=$_POST["no_hp"];
+$password=md5($_POST["password"]); //untuk password digunakan enskripsi md5
+
+
+//Query input menginput data kedalam tabel User
+  $sql="insert into regist_user (username,nama,psw_repeat,email,no_hp,password) values
+	('$username','$nama','$psw_repeat','$email','$no_hp','$password')";
+
+//Mengeksekusi/menjalankan query diatas	
+  $hasil=mysqli_query($kon,$sql);
+
+//Kondisi apakah berhasil atau tidak
+
+if($hasil){
+  echo '<div class="alert alert-success" role="alert">
+       Berhasil Melakukan Registrasi </div>';
+}
+
+else {
+  echo '<div class="alert alert-danger" role="alert">
+        Belum Berhasil Terisi' ;
+}
+
+?>
+
+
 </body>
 </html>

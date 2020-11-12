@@ -49,39 +49,6 @@
         </style>
     </head>
 	<body>
-<<<<<<< HEAD
-		<?php
-			include "koneksi.php";
-		?>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-			<a class="navbar-brand" href="index.php">
-				<img src="gambar\logo.png" style="width: 50px; height: 50px;"> Find Technician
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse mynav" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="profile.php">Profile</a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="list_teknisi.php">List Teknisi</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.php">About Us</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.php">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<br> <br> <br> <br>
-=======
 		
 		<!--Batas TOP NAV-->
 		<div class="top container-fluid">
@@ -102,7 +69,6 @@
 		<!--Batas TOP NAV-->
 
 
->>>>>>> 4a7a647d6a1b6009e391400b303a4a03db9d7ef1
         <h1 style="text-align: center;" class="display-4">Technician</h1>
         <?php
 			$sum = "0";

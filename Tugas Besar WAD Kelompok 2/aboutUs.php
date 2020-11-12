@@ -12,8 +12,6 @@
               background-color: white;
               margin-bottom: 10px;
               
-              
-              
            }
 
            .top a {

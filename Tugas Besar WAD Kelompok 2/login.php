@@ -51,19 +51,13 @@
             <a href="list_teknisi.php">List Teknisi</a>
             <a href="aboutUs.php">About Us</a>
             <a href="contact.php">Contact</a>
-
-            <form class="search form-inline">
-                <input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-                <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-              </form>
         </div>
 		<!--Batas TOP NAV-->
 
     
-    <div class="Container" >
-    <form style="margin-left: 200px; margin-right: 200px;">
+    <div class="container" >
+    <form style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
+        <h2 align="center" >Login </h2><br>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
