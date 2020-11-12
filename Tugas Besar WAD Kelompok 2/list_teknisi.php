@@ -6,14 +6,6 @@
                  Home Website Find Technician!
         </title>
         <style>
-			.top {
-				background-color: white;
-				margin-bottom: 10px;  
-			}
-			.top a {
-				padding-left: 20px;
-				font-size: larger;   
-			}
 			.search {
 				float:right;
 				margin-top: 20px;  
@@ -33,10 +25,34 @@
 			.mynav a:hover {
                 border-bottom: 2px solid #257CE5;
             }
+			.card {
+				padding: 15px;
+				margin-top: 30px;
+			}
+			.skills {
+				text-align: left;
+				padding: 7px;
+				margin-top: 15px;
+			}
+			.skills ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			.skills ul li {
+				border-radius: 1px;
+				display: inline-block;
+				font-size: 12px;
+				margin: 0 3px 3px 0;
+				padding: 3px;
+			}
         </style>
     </head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+		<?php
+			include "koneksi.php";
+		?>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 			<a class="navbar-brand" href="index.php">
 				<img src="gambar\logo.png" style="width: 50px; height: 50px;"> Find Technician
 			</a>
@@ -63,227 +79,49 @@
 				</ul>
 			</div>
 		</nav>
+		<br> <br> <br> <br>
         <h1 style="text-align: center;" class="display-4">Technician</h1>
-        <div class="container" style="margin-top: 20px;">
+        <?php
+			$sum = "0";
+			$query = mysqli_query($kon,"SELECT * FROM tech") or die("Error Query");
+		?>
+		<div class="container" style="margin-top: 20px;">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(1)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
+				<?php foreach ($query as $data){
+						if ($sum=="3") {
+							$sum="0";
+							echo "</div> <div class='row'>";
+						}
+				?>
+				<div class="col-md-4">
+					<div class="card" style="width: 22rem;">
+						<img src="gambar/noprofile.jpg" class="card-img-top" style="classwidth:100%;height:15vw;object-fit:cover;" alt="Profile Picture" style="object-fit:cover">
+						<div class="card-body" style="text-align:center">
+							<h5 class="card-title"><?php echo $data['name']; ?></h5>
+							<p class="card-text" style="text-align:left"><?=$data['desc']?></p>
+							<div class="skills">
+								<h6>Skills</h6>
+								<ul>
+									<?php
+									if (!empty ($data['']) {
+										foreach ($_POST['Service'] as $value) {
+											echo '<ul>';
+												echo "<li>$value</li>";
+											echo '</ul>';
+										}
+									}
+									else {
+										echo "no service";
+									}
+									?>
+								</ul>
+							</div>
+							<br>
+							<form action="teknisi.php" method="GET" align="center">
+								<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang</button>  
+							</form>
 						</div>
 					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(2)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(3)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(4)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(5)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(6)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(7)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(8)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(9)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(10)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">	
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(11)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(12)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(13)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(14)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(15)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-				<div class="col-md-3">
-					<div class="card" style="width: 14rem;">
-						<img src="gambar/noprofile.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<p class="card-text"> <h5>Technician(16)</h5> <br> <h4 style="color: darkcyan;">biodata</h4><hr>
-								<label for="name">Deskripsi Teknisi</label><hr>
-								<form action="teknisi.php" method="GET" align="center">
-									<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang </button>  
-								</form>
-							</p>
-						</div>
-					</div>				
-				</div>
-			</div>
-		</div>
+				</div><?php $line="$sum+1"; ?> <?php } ?>
 	</body>
 </html>
