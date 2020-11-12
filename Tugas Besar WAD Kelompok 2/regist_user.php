@@ -80,19 +80,32 @@ margin-top: 20px;
 .container {
 margin-top: 20px;
            }
+
+
+           .btn {
+               margin-left: 10px;
+           }
+
         </style>
     </head>
 
     <body>
 
-        <div class="top container-fluid">
+   <!--Batas TOP NAV-->
+   <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="index.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="list_teknisi.php">List Teknisi</a>
             <a href="aboutUs.php">About Us</a>
             <a href="contact.php">Contact</a>
+
+            <form class="search form-inline">
+            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+            </form>
         </div>
+        <!--Batas TOP NAV-->
 
 
 <form action="regist_user.php" method="POST">

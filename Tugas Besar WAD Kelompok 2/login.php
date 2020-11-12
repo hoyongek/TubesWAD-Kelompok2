@@ -38,24 +38,36 @@
 			.mynav a:hover {
                 border-bottom: 2px solid #257CE5;
             }
+
+            .btn {
+               margin-left: 10px;
+           }
+
         </style>
+
+
 
   </head>
   <body>
 
-  <!--Batas TOP NAV-->
-  <div class="top container-fluid">
+ <!--Batas TOP NAV-->
+ <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="index.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="list_teknisi.php">List Teknisi</a>
             <a href="aboutUs.php">About Us</a>
             <a href="contact.php">Contact</a>
+
+            <form class="search form-inline">
+            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+            </form>
         </div>
-		<!--Batas TOP NAV-->
+        <!--Batas TOP NAV-->
 
     
-    <div class="container" >
+    <div class="container">
     <form style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
         <h2 align="center" >Login </h2><br>
         <div class="form-group">
@@ -73,7 +85,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
-
       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

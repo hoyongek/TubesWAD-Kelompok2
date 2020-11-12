@@ -46,12 +46,17 @@
 				margin: 0 3px 3px 0;
 				padding: 3px;
 			}
+
+			.btn {
+               margin-left: 10px;
+           }
+
         </style>
     </head>
 	<body>
 		
-		<!--Batas TOP NAV-->
-		<div class="top container-fluid">
+		<<!--Batas TOP NAV-->
+        <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="index.php">Home</a>
             <a href="profile.php">Profile</a>
@@ -60,14 +65,26 @@
             <a href="contact.php">Contact</a>
 
             <form class="search form-inline">
-                <input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-                <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-              </form>
+            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+            </form>
         </div>
-		<!--Batas TOP NAV-->
+        <!--Batas TOP NAV-->
 
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>
+		Home Website Find Technician!
+	</title>
+	<style>
+		.search {
+			float: right;
+			margin-top: 20px;
+		}
+
+		body {
+			background-color: #F8F9F9;
+		}
 
         <h1 style="text-align: center;" class="display-4">Technician</h1>
         <?php
@@ -87,30 +104,28 @@
 						<img src="gambar/noprofile.jpg" class="card-img-top" style="classwidth:100%;height:15vw;object-fit:cover;" alt="Profile Picture" style="object-fit:cover">
 						<div class="card-body" style="text-align:center">
 							<h5 class="card-title"><?php echo $data['name']; ?></h5>
-							<p class="card-text" style="text-align:left"><?=$data['desc']?></p>
+							<p class="card-text" style="text-align:left"><?= $data['desc'] ?></p>
 							<div class="skills">
 								<h6>Skills</h6>
 								<ul>
 									<?php
-									if (!empty ($data['']) {
-										foreach ($_POST['Service'] as $value) {
-											echo '<ul>';
-												echo "<li>$value</li>";
-											echo '</ul>';
-										}
-									}
-									else {
-										echo "no service";
-									}
-									?>
+									$sav = $data['id'];
+									$query2 = mysqli_query($kon, "SELECT d.name FROM device d
+									INNER JOIN specialist s on s.device_id = d.id
+									LEFT JOIN tech t on t.id = s.tech_id
+									WHERE s.tech_id = '$sav'") or die("Error Query");
+									foreach ($query2 as $value) { ?>
+										<li><?php echo $value['d.name']; ?></li>
+									<?php } ?>
 								</ul>
 							</div>
 							<br>
 							<form action="teknisi.php" method="GET" align="center">
-								<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang</button>  
+								<button type="submit" value="1" name="submit" class="btn btn-primary">Pesan Sekarang</button>
 							</form>
 						</div>
-					</div>				
-				</div><?php $line="$sum+1"; ?> <?php } ?>
-	</body>
+					</div>
+				</div><?php $line = "$sum+1"; ?> <?php } ?>
+</body>
+
 </html>
