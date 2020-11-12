@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -29,6 +30,16 @@ function query($query)
 	while ($row = mysqli_fetch_assoc($result)) {
 		$rows[] = $row;
 	}
+=======
+$host="localhost:3307";
+$user="root";
+$password="";
+$db="db_technisian";
+
+$kon = mysqli_connect($host,$user,$password,$db);
+if (!$kon){
+	  die("Koneksi gagal:".mysqli_connect_error());
+>>>>>>> 7b2caae278d85f7a8c77fa0ccbcee26831827f0f
 }
 
 function tambah_tech($data)

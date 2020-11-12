@@ -35,6 +35,10 @@
            .container {
                margin-top: 20px;
            }
+           
+           .btn {
+               margin-left: 10px;
+           }
 
 
         </style>
@@ -52,11 +56,9 @@
             <a href="contact.php">Contact</a>
 
             <form class="search form-inline">
-                <input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-                <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-              </form>
+            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+            </form>
         </div>
        <!--Batas TOP NAV-->
 
@@ -123,9 +125,6 @@
                 </div>
             </div>
         </div>
-    
-        
-
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

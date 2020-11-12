@@ -36,12 +36,18 @@
                margin-top: 20px;
            }
 
+           .btn {
+               margin-left: 10px;
+           }
+
+
 
         </style>
     </head>
 
     <body>
 
+        <!--Batas TOP NAV-->
         <div class="top container-fluid">
             <img src="gambar\logo.png" style="width: 75px; height: 75px;">
             <a href="index.php">Home</a>
@@ -51,12 +57,11 @@
             <a href="contact.php">Contact</a>
 
             <form class="search form-inline">
-                <input id="button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-                <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-              </form>
+            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
+            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
+            </form>
         </div>
+        <!--Batas TOP NAV-->
 
         <h1 style="text-align: center;" class="display-4">Profile !</h1>
 
