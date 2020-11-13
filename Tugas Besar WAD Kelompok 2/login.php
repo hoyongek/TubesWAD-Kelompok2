@@ -59,6 +59,31 @@
 
 <body>
 
+    <?php
+
+
+
+if ($_POST=["hasil"]) {
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Registrasi Berhasil ! </strong> Silahkan Login.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>';
+}
+
+else {
+  echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Gagal! </strong> Coba lagi.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>' ;
+}
+
+
+?>
+
     <!--Batas TOP NAV-->
     <div class="top container-fluid">
         <img src="gambar\logo.png" style="width: 75px; height: 75px;">
