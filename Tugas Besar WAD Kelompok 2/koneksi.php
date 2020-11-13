@@ -1,14 +1,13 @@
 <?php
-<<<<<<< HEAD
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "db_technisian";
+//$host = "localhost";
+//$user = "root";
+//$password = "";
+//$db = "db_technisian";
 
-$kon = mysqli_connect($host, $user, $password, $db);
-if (!$kon) {
-	die("Koneksi gagal:" . mysqli_connect_error());
-}
+//$kon = mysqli_connect($host, $user, $password, $db);
+//if (!$kon) {
+//die("Koneksi gagal:" . mysqli_connect_error());
+//}
 
 //$result = mysqli_query($kon, $query);
 
@@ -30,16 +29,6 @@ function query($query)
 	while ($row = mysqli_fetch_assoc($result)) {
 		$rows[] = $row;
 	}
-=======
-$host="localhost:3307";
-$user="root";
-$password="";
-$db="db_technisian";
-
-$kon = mysqli_connect($host,$user,$password,$db);
-if (!$kon){
-	  die("Koneksi gagal:".mysqli_connect_error());
->>>>>>> 7b2caae278d85f7a8c77fa0ccbcee26831827f0f
 }
 
 function tambah_tech($data)
@@ -66,14 +55,13 @@ function login($data)
 	$username = htmlspecialchars($data['username']);
 	$password = htmlspecialchars($data['password']);
 
-	if ($user = query("SELECT * FROM user WHERE username= 'username'")) {
-		if (password_verify($password, $user['password'])) {
-			$_SESSION['login'] = true;
-			header("Location: index.php");
-			exit;
-		}
+	if (query("SELECT * FROM ")) {
+		$_SESSION['login'] = true;
+		header("Location: index.php");
+		exit;
+	} else {
+		return ['error' => true, 'pesan' => 'Username/Password Salah!'];
 	}
-	return ['error' => true, 'pesan' => 'Username / Password Salah!'];
 }
 
 function registrasi($data)
