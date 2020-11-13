@@ -100,12 +100,34 @@
     }
 
     .alert {
-        position: fixed;
+        box-sizing: border-box;
+        padding: 8px;
     }
     </style>
 </head>
 
 <body>
+
+    <?php
+error_reporting(error_reporting() & ~E_NOTICE) ;
+
+//Kondisi apakah berhasil atau tidak
+if($hasil){
+  echo '<div class="alert alert-success" role="alert">
+       Berhasil Melakukan Registrasi </div>';
+}
+
+else if (empty($hasil)) {
+  echo '<div class="alert alert-warning" role="alert">
+       Silahkan Mengisi Form </div>';
+}
+
+else {
+  echo '<div class="alert alert-danger" role="alert">
+        Belum Berhasil Terisi </div>' ;
+}
+
+?>
 
     <!--Batas TOP NAV-->
     <div class="top container-fluid">
@@ -178,18 +200,6 @@ $password=md5($_POST["password"]); //untuk password digunakan enskripsi md5
 
 //Mengeksekusi/menjalankan query diatas	
   $hasil=mysqli_query($kon,$sql);
-
-//Kondisi apakah berhasil atau tidak
-
-if($hasil){
-  echo '<div class="alert alert-success" role="alert">
-       Berhasil Melakukan Registrasi </div>';
-}
-
-else {
-  echo '<div class="alert alert-danger" role="alert">
-        Belum Berhasil Terisi' ;
-}
 
 ?>
 

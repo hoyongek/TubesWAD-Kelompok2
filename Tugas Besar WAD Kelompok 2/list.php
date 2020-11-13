@@ -120,8 +120,6 @@
 
     <hr class="featurette-divider">
 
-
-
     <!-- footer -->
 
     <footer class="container">
