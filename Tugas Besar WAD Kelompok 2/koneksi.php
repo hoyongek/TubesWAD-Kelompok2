@@ -55,7 +55,7 @@ function login($data)
 	$username = htmlspecialchars($data['username']);
 	$password = htmlspecialchars($data['password']);
 
-	if (query("SELECT * FROM ")) {
+	if ($username == 'admin' && $password == 'admin') {
 		$_SESSION['login'] = true;
 		header("Location: index.php");
 		exit;
