@@ -71,7 +71,7 @@ function login($data)
 
   if ($username == 'admin' && $password == 'admin') {
     $_SESSION['login'] = true;
-    header("Location: index.php");
+    header("Location: admin.php");
     exit;
   } else {
     return ['error' => true, 'pesan' => 'Username/Password Salah!'];

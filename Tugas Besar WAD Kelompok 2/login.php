@@ -6,7 +6,7 @@ if (isset($_SESSION['login'])) {
   exit;
 }
 
-require 'koneksi.php';
+require 'function.php';
 if (isset($_POST['login'])) {
   $login = login($_POST);
 }
