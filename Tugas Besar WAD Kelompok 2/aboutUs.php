@@ -60,14 +60,39 @@
     </div>
     <!--Batas TOP NAV-->
 
-    <h1 style="text-align: center;" class="display-4">Aboust US !</h1>
+    <h1 style="text-align: center;" class="display-4">Aboust US !</h1><br>
+
+    <div class="container">
+        <table>
+
+            <td>
+                <tr>
+                    <blockquote class="blockquote text-right">
+                        <p class="mb-0">Melayani Pelanggan dan Memastikan Pelanggan Nyaman adalah Moto Kami.</p>
+                        <footer class="blockquote-footer">Direktur Findtechnician <cite title="Source Title">January 15,
+                                2020</cite>
+                        </footer>
+                    </blockquote>
+                </tr>
+
+                <tr>
+                    <div class="text-left">
+                        <img src="gambar/direktur.png" class="rounded">
+                    </div>
+                </tr>
+
+
+
+
+        </table>
+
+    </div>
 
 
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"

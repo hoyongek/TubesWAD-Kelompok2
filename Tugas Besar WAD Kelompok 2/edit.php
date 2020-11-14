@@ -1,3 +1,40 @@
+<?php
+// include database connection file
+include_once("config.php");
+
+// Check if form is submitted for user update, then redirect to homepage after update
+if(isset($_POST['update']))
+{   
+    $id = $_POST['id'];
+
+    $name=$_POST['name'];
+    $mobile=$_POST['mobile'];
+    $email=$_POST['email'];
+
+    // update user data
+    $result = mysqli_query($mysqli, "UPDATE users SET name='$name',email='$email',mobile='$mobile' WHERE id=$id");
+
+    // Redirect to homepage to display updated user in list
+    header("Location: admin.php");
+}
+?>
+<?php
+// Display selected user data based on id
+// Getting id from url
+$id = $_GET['id'];
+
+// Fetech user data based on id
+$result = mysqli_query($mysqli, "SELECT * FROM users WHERE id=$id");
+
+while($user_data = mysqli_fetch_array($result))
+{
+    $name = $user_data['name'];
+    $email = $user_data['email'];
+    $mobile = $user_data['mobile'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -13,8 +50,6 @@
     .top {
         background-color: white;
         margin-bottom: 10px;
-
-
 
     }
 
@@ -45,6 +80,7 @@
 </head>
 
 <body>
+
     <!--Batas TOP NAV-->
     <div class="top container-fluid">
         <img src="gambar\logo.png" style="width: 75px; height: 75px;">
@@ -61,17 +97,38 @@
     </div>
     <!--Batas TOP NAV-->
 
-    <h1 style="text-align: center;" class="display-4">Contact !</h1>
+    <h1 style="text-align: center;" class="display-4"> Edit Data !</h1>
 
     <div class="container">
-        <p>Email : Findtechnian@gmail.com </p></br>
-        <p>Telephone : 0828890288 </p></br>
-        <p>Fax : +6228890288 </p></br>
+        <br>
+
+        <form name="update_user" method="post" action="edit.php" style=" margin-left: 350px; margin-right: 350px;">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" value=<?php echo $name;?>>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" value=<?php echo $email;?>>
+            </div>
+
+            <div class="form-group">
+                <label for="Mobile">Mobile</label>
+                <input type="text" class="form-control" name="mobile" value=<?php echo $mobile;?>>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+            </div>
+
+            <button type="Submit" class="btn btn-primary" name="update" value="Update">Submit</button>
+
+        </form>
+
+
+
     </div>
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

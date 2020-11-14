@@ -14,8 +14,6 @@
         background-color: white;
         margin-bottom: 10px;
 
-
-
     }
 
     .top a {
@@ -45,6 +43,7 @@
 </head>
 
 <body>
+
     <!--Batas TOP NAV-->
     <div class="top container-fluid">
         <img src="gambar\logo.png" style="width: 75px; height: 75px;">
@@ -61,17 +60,49 @@
     </div>
     <!--Batas TOP NAV-->
 
-    <h1 style="text-align: center;" class="display-4">Contact !</h1>
+    <h1 style="text-align: center;" class="display-4"> ADD DATA !</h1>
 
     <div class="container">
-        <p>Email : Findtechnian@gmail.com </p></br>
-        <p>Telephone : 0828890288 </p></br>
-        <p>Fax : +6228890288 </p></br>
+        <br>
+        <form action="add.php" method="post" name="form1" style="margin-left: 350px; margin-right: 350px;">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="Mobile">Mobile</label>
+                <input type="text" class="form-control" name="mobile">
+            </div>
+
+            <button type="Submit" class="btn btn-primary" name="Submit">Submit</button>
+
+        </form>
+
+        <?php
+
+    // Check If form submitted, insert form data into users table.
+    if(isset($_POST['Submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+
+        // include database connection file
+        include_once("config.php");
+
+        // Insert user data into table
+        $result = mysqli_query($mysqli, "INSERT INTO users(name,email,mobile) VALUES('$name','$email','$mobile')");
+
+        // Show message when user added
+        header("Location: admin.php");
+    }
+    ?>
     </div>
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
