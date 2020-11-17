@@ -1,7 +1,7 @@
 <?php
 
 $databaseHost = 'localhost:3307';
-$databaseName = 'test';
+$databaseName = 'tubes_wad';
 $databaseUsername = 'root';
 $databasePassword = '';
 
