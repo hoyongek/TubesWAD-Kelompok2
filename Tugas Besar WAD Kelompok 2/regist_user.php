@@ -5,186 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #F8F9F9;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    /* Add padding to containers */
-    .container {
-        padding: 16px;
-        background-color: white;
-    }
-
-    /* Full-width input fields */
-    input[type=text],
-    input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
-    }
-
-    input[type=text]:focus,
-    input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-
-    /* Overwrite default styles of hr */
-    hr {
-        border: 1px solid #f1f1f1;
-        margin-bottom: 25px;
-    }
-
-    /* Set a style for the submit button */
-    .registerbtn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-    }
-
-    .registerbtn:hover {
-        opacity: 1;
-    }
-
-    /* Add a blue text color to links */
-    a {
-        color: dodgerblue;
-    }
-
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-        background-color: #f1f1f1;
-        text-align: center;
-    }
-
-    .top {
-        background-color: white;
-        margin-bottom: 10px;
-
-    }
-
-    .top a {
-        padding-left: 20px;
-        font-size: larger;
-
-    }
-
-    .search {
-        float: right;
-        margin-top: 20px;
-
-    }
-
-    .container {
-        margin-top: 20px;
-    }
-
-
-    .btn {
-        margin-left: 10px;
-    }
-
-    .alert {
-        box-sizing: border-box;
-        padding: 8px;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
     <!--Batas TOP NAV-->
     <div class="top container-fluid">
-        <img src="gambar\logo.png" style="width: 75px; height: 75px;">
+        <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
-        <a href="profile.php">Profile</a>
         <a href="list_teknisi.php">List Teknisi</a>
         <a href="aboutUs.php">About Us</a>
         <a href="contact.php">Contact</a>
 
-        <form class="search form-inline">
-            <a href="regist_user.php" button type="button" class="btn btn-info">Register</button></a>
-            <a href="login.php" button type="button" class="btn btn-danger">Login</button></a>
-        </form>
+        <div class="dropdown">
+            <h5 class="halo">Halo, Guest</h5>
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="logout.php">Log Out</a>
+            </div>
+        </div>
     </div>
     <!--Batas TOP NAV-->
 
+    <div class="isi_body">
 
-    <form action="login.php" method="POST">
+
         <div class="container">
-            <h1>Register</h1>
-            <p>Please fill in this form to create an account.</p>
-            <hr>
-            <label for="username"><b>Username</b></label>
-            <input type="text" name="username" placeholder="Enter Username" id="username" required>
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <form class="registrasi" method="POST" action="login.php">
+                    <h3>Formulir Registrasi</h3><br>
 
-            <label for="nama"><b>Full Name</b></label>
-            <input type="text" name="nama" placeholder="Enter Name " id="nama" required>
+                    <input type="text" class="form-control" placeholder="Username"><br>
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
 
-            <label for="no_hp"><b>Phone Number</b></label>
-            <input type="text" placeholder="Enter Phone Number" name="no_hp" id="no_hp" required>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                    </div><br>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                    <div class="row">
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
 
-            <label for="psw_repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw_repeat" required>
-            <hr>
-            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-            <button type="submit" class="registerbtn">Register</button>
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="Tulis Ulang Password Anda">
+                        </div>
+                    </div>
+
+                    <br>
+                    <input type="number" class="form-control" placeholder="No Telfon"><br>
+                    <input type="email" class="form-control" placeholder="E-mail"><br>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">User</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Teknisi</label>
+                    </div>
+
+                    <div class="button" style="margin-left:600px;">
+                        <button type="submit" class="btn btn-danger mb-2">Cancel</button>
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+
+            </div>
+
+
+
+
+
+            </form>
         </div>
+    </div>
 
-        <div class="container signin">
-            <p>Already have an account? <a href="login.php">Sign in</a>.</p>
-        </div>
-    </form>
-
-    <?php
-error_reporting(error_reporting() & ~E_NOTICE) ;
-
-
-//Include file koneksi ke database
-include "koneksi.php";
-
-//menerima nilai dari kiriman form pendaftaran
-$username=$_POST["username"];
-$nama=$_POST["nama"];
-$psw_repeat=$_POST["psw_repeat"];
-$email=$_POST["email"];
-$no_hp=$_POST["no_hp"];
-$password=md5($_POST["password"]); //untuk password digunakan enskripsi md5
-
-
-//Query input menginput data kedalam tabel User
-  $sql="insert into regist_user (username,nama,psw_repeat,email,no_hp,password) values
-	('$username','$nama','$psw_repeat','$email','$no_hp','$password')";
-
-//Mengeksekusi/menjalankan query diatas	
-  $hasil=mysqli_query($kon,$sql);
-
-
-  
-?>
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

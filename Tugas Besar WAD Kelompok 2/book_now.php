@@ -42,29 +42,59 @@
 
     <div class="isi_body">
 
-        <h1 style="text-align: center;" class="display-4">Aboust US !</h1><br>
+        <h1 style="text-align: center;" class="display-4">Book Now</h1><br>
 
         <div class="container">
-            <table>
 
-                <td>
-                    <tr>
-                        <blockquote class="blockquote text-right">
-                            <p class="mb-0">Melayani Pelanggan dan Memastikan Pelanggan Nyaman adalah Moto Kami.</p>
-                            <footer class="blockquote-footer">Direktur Findtechnician <cite title="Source Title">January
-                                    15,
-                                    2020</cite>
-                            </footer>
-                        </blockquote>
-                    </tr>
+            <div class="row" style="margin-right:auto;margin-left:auto">
 
-                    <tr>
-                        <div class="text-left">
-                            <img src="gambar/direktur.png" class="rounded">
-                        </div>
-                    </tr>
-            </table>
 
+
+                <div class="col-3">
+                    <h5>Teknisi</h5><br>
+
+                    <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (16).png" class="rounded">
+
+                </div>
+
+
+                <div class="col-3">
+                    <h5>Deteil Teknisi</h5><br>
+
+                    <p>
+                        Nama : Hariyo Arditho <br>
+                        <hr>
+                        No Telfon : 02818998982 <br>
+                        <hr>
+                        Rating : Bintang 5 <br>
+                        <hr>
+                        Kategori : Kelistrikan <br>
+                        <hr>
+
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-sm-6">
+                    <h5>Alamat Anda</h5><br>
+
+                    <p>
+                        Jln. Dr mansury baru 2 nomor 11, Kecamatan Tangerang SUnggal. Tangerang Utara. POS 120932.
+                        Banten. Indonesia <br>
+                        <hr>
+
+                    </p>
+
+                </div>
+
+                <div class="btn" style="margin-left:800px">
+                    <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
+                    <a href="my_booking_user.php" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
         </div>
     </div>
 

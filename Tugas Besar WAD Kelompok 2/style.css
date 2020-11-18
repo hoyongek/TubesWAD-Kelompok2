@@ -1,0 +1,62 @@
+<style>
+    .top {
+        width: 1500px;
+        background-color:white;
+        margin-bottom: 20px;
+
+    }
+
+    .top a {
+        padding-left: 20px;
+        font-size: larger;
+
+    }
+
+
+    .dropdown {
+        float: right;
+        margin-top: 20px;
+       
+    }
+
+    .isi_body{
+        padding: 20px;
+        background-color: #F8F9F9;
+
+    }
+
+    .container {
+        margin-top: 20px;
+        background-color: #F8F9F9;
+    }
+
+    .btn {
+        margin-left: 10px;
+    }
+
+    .halo {
+        float: left;
+        margin-top: 5px;
+    }
+
+    .logo_navbar {
+        width: 75px;
+        height: 75px;
+    }
+
+    .registrasi {
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+    }
+
+    .card{
+        margin-top: 20px;
+    }
+
+    .deskripsi_teknisi_index{
+        text-align: justify;
+    }
+    
+    
+</style>

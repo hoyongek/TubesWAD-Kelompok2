@@ -2,82 +2,44 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
 
     <title>
         Home Website Find Technician!
     </title>
 
-    <style>
-    /* nav */
-    .mynav a {
-        margin-right: 10px;
-    }
 
-    .mynav a:hover {
-        border-bottom: 2px solid #257CE5;
-    }
-
-    .active a {
-        border-bottom: 2px solid #257CE5;
-    }
-
-    /* Featurettes */
-    .featurette-divider {
-        margin: 5rem 0;
-    }
-
-    .featurette-heading {
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: -.05rem;
-    }
-
-    body {
-        margin-top: 90px;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-    </style>
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
-        <a class="navbar-brand" href="#">
-            <img src="gambar\logo.png" style="width: 50px; height: 50px;"> Find Technician
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse mynav" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="list.php">List Teknisi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
-                </li>
-            </ul>
-            <input type=button onClick="location.href='login_user.php'" class="btn btn-outline-success mr-3"
-                value='Login'>
-            <input type=button onClick="location.href='regis_user.php'" class="btn btn-outline-danger" value='Register'>
-        </div>
-    </nav><br><br>
+    <!--Batas TOP NAV-->
+    <div class="top container-fluid">
+        <img class="logo_navbar" src="gambar\logo.png">
+        <a href="index.php">Home</a>
+        <a href="list_teknisi.php">List Teknisi</a>
+        <a href="aboutUs.php">About Us</a>
+        <a href="contact.php">Contact</a>
 
+        <div class="dropdown">
+            <h5 class="halo">Halo, Guest</h5>
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="logout.php">Log Out</a>
+            </div>
+        </div>
+    </div>
+    <!--Batas TOP NAV-->
 
     <!-- Featurettes -->
     <div class="row featurette">
@@ -128,16 +90,15 @@
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>
