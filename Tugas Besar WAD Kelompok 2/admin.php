@@ -1,23 +1,15 @@
 <?php
-// Create database connection using config file
+session_start();
+
 include_once("config.php");
 
-// Fetch all users data from database
-$result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY id DESC");
 
-
-session_start();
-if (!isset($_SESSION['login'])) {
-	header("Location: login.php");
-	exit;
+if (!isset($_SESSION['adminLogin'])) {
+    header("Location: login.php");
+    exit;
 }
 
-//$perHalaman = 1;
-//$jmlData = count(query("SELECT * FROM tech"));
-//$jmlHalaman = ceil($jmlData / $perHalaman);
-//$halaman = (isset($_GET["jmlHalaman"])) ? $_GET["halaman"] : 1;
-//$awal = ($perHalaman * $halaman) - $perHalaman;
-//$tech = query("SELECT * FROM tech LIMIT $awal, $perHalaman");
 ?>
 
 
@@ -29,8 +21,7 @@ if (!isset($_SESSION['login'])) {
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Daftar User</title>
@@ -48,8 +39,7 @@ if (!isset($_SESSION['login'])) {
 
         <div class="dropdown">
             <h5 class="halo">Halo, Guest</h5>
-            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -76,21 +66,22 @@ if (!isset($_SESSION['login'])) {
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Name</th>
-                        <th scope="col">Mobile</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Password</th>
                         <th scope="col">Update</th>
                     </tr>
                 </thead>
 
                 <?php
 
-    while($user_data = mysqli_fetch_array($result)) {         
-        echo "<tr>";
-        echo "<td>".$user_data['name']."</td>";
-        echo "<td>".$user_data['mobile']."</td>";
-        echo "<td>".$user_data['email']."</td>";    
-        echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";   }
-    ?>
+                while ($user_data = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $user_data['nama'] . "</td>";
+                    echo "<td>" . $user_data['email'] . "</td>";
+                    echo "<td>" . $user_data['password'] . "</td>";
+                    echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
+                }
+                ?>
             </table>
 
             <a href="add.php" button type="button" class="btn ADD btn-success">Tambah Data</button></a>
@@ -98,14 +89,11 @@ if (!isset($_SESSION['login'])) {
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
 
 </body>
