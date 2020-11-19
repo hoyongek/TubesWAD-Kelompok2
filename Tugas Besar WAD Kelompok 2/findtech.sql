@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 10:50 AM
+-- Generation Time: Nov 19, 2020 at 02:31 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -30,10 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `gambar` text NOT NULL,
   `roles` varchar(10) NOT NULL DEFAULT 'Admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nama`, `username`, `password`, `gambar`, `roles`) VALUES
+(1, 'admin', 'admin', 'admin', '', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -58,6 +66,7 @@ CREATE TABLE `technician` (
   `id` int(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `no_hp` bigint(13) NOT NULL,
   `alamat` varchar(300) NOT NULL,
   `gambar` text NOT NULL,
@@ -75,11 +84,19 @@ CREATE TABLE `user` (
   `id` int(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_hp` bigint(13) NOT NULL,
-  `alamat` varchar(300) NOT NULL,
-  `gambar` text NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `no_hp` varchar(13) DEFAULT NULL,
+  `alamat` varchar(300) DEFAULT NULL,
+  `gambar` text DEFAULT NULL,
   `roles` varchar(10) NOT NULL DEFAULT 'User'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`) VALUES
+(1, 'test', 'test@t.com', 'test', '', '', '', 'User');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +136,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pesan`
@@ -137,7 +154,7 @@ ALTER TABLE `technician`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
