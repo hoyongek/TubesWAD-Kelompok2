@@ -28,7 +28,7 @@ if (!isset($_SESSION['userLogin'])) {
 <body>
 
     <!--Batas TOP NAV-->
-    <div class="top container-fluid">
+    <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
         <a href="list_teknisi.php">List Teknisi</a>
@@ -42,7 +42,8 @@ if (!isset($_SESSION['userLogin'])) {
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="#">My Booking (User)</a>
+                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
                 <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>

@@ -1,8 +1,6 @@
-<style>
+
     .top {
-        width: 1500px;
         background-color:white;
-        margin-bottom: 20px;
 
     }
 
@@ -20,13 +18,12 @@
     }
 
     .isi_body{
-        padding: 20px;
+        padding-top: 100px;
         background-color: #F8F9F9;
 
     }
 
     .container {
-        margin-top: 20px;
         background-color: #F8F9F9;
     }
 
@@ -57,7 +54,10 @@
     .deskripsi_teknisi_index{
         text-align: justify;
     }
+
+    .profile_teknisi{
+        
+    }
+
+   
     
-    
-    
-</style>

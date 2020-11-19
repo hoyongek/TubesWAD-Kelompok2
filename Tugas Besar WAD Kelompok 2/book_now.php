@@ -17,7 +17,7 @@
 <body>
 
     <!--Batas TOP NAV-->
-    <div class="top container-fluid">
+    <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
         <a href="list_teknisi.php">List Teknisi</a>
@@ -26,15 +26,18 @@
 
         <div class="dropdown">
             <h5 class="halo">Halo, Guest</h5>
-            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="#">My Booking (User)</a>
+                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="dropdown-item" href="admin.php">Admin</a>
             </div>
         </div>
     </div>
@@ -45,54 +48,56 @@
         <h1 style="text-align: center;" class="display-4">Book Now</h1><br>
 
         <div class="container">
+            <div class="shadow p-3 mb-5 bg-white rounded">
 
-            <div class="row" style="margin-right:auto;margin-left:auto">
-
-
-
-                <div class="col-3">
-                    <h5>Teknisi</h5><br>
-
-                    <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (16).png" class="rounded">
-
-                </div>
-
-
-                <div class="col-3">
-                    <h5>Deteil Teknisi</h5><br>
-
-                    <p>
-                        Nama : Hariyo Arditho <br>
-                        <hr>
-                        No Telfon : 02818998982 <br>
-                        <hr>
-                        Rating : Bintang 5 <br>
-                        <hr>
-                        Kategori : Kelistrikan <br>
-                        <hr>
-
-
-                    </p>
-
-                </div>
+                <div class="row" style="margin-right:auto;margin-left:auto">
 
 
 
-                <div class="col-sm-6">
-                    <h5>Alamat Anda</h5><br>
+                    <div class="col-3">
+                        <h5>Teknisi</h5><br>
 
-                    <p>
-                        Jln. Dr mansury baru 2 nomor 11, Kecamatan Tangerang SUnggal. Tangerang Utara. POS 120932.
-                        Banten. Indonesia <br>
-                        <hr>
+                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (16).png" class="rounded">
 
-                    </p>
+                    </div>
 
-                </div>
 
-                <div class="btn" style="margin-left:800px">
-                    <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
-                    <a href="my_booking_user.php" class="btn btn-primary">Book Now</a>
+                    <div class="col-3">
+                        <h5>Deteil Teknisi</h5><br>
+
+                        <p>
+                            Nama : Hariyo Arditho <br>
+                            <hr>
+                            No Telfon : 02818998982 <br>
+                            <hr>
+                            Rating : Bintang 5 <br>
+                            <hr>
+                            Kategori : Kelistrikan <br>
+                            <hr>
+
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="col-6">
+                        <h5>Alamat Anda</h5><br>
+
+                        <p>
+                            Jln. Dr mansury baru 2 nomor 11, Kecamatan Tangerang SUnggal. Tangerang Utara. POS 120932.
+                            Banten. Indonesia <br>
+                            <hr>
+
+                        </p>
+
+                    </div>
+
+                    <div class="btn" style="margin-left:800px">
+                        <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
+                        <a href="my_booking_user.php" class="btn btn-primary">Book Now</a>
+                    </div>
                 </div>
             </div>
         </div>
