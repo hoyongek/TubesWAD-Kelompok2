@@ -17,7 +17,7 @@
 <body>
 
     <!--Batas TOP NAV-->
-    <div class="top container-fluid">
+    <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
         <a href="list_teknisi.php">List Teknisi</a>
@@ -26,15 +26,18 @@
 
         <div class="dropdown">
             <h5 class="halo">Halo, Guest</h5>
-            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="#">My Booking (User)</a>
+                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="dropdown-item" href="admin.php">Admin</a>
             </div>
         </div>
     </div>

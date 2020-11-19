@@ -11,6 +11,32 @@
 <body>
 
     <!--Batas TOP NAV-->
+    <div class="top container-fluid fixed-top ">
+        <img class="logo_navbar" src="gambar\logo.png">
+        <a href="index.php">Home</a>
+        <a href="list_teknisi.php">List Teknisi</a>
+        <a href="aboutUs.php">About Us</a>
+        <a href="contact.php">Contact</a>
+
+        <div class="dropdown">
+            <h5 class="halo">Halo, Guest</h5>
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">My Booking (User)</a>
+                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
+                <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="login.php">Login</a>
+                <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="dropdown-item" href="admin.php">Admin</a>
+            </div>
+        </div>
+    </div>
+    <!--Batas TOP NAV-->
+    <!--Batas TOP NAV-->
     <div class="top container-fluid">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
@@ -39,7 +65,7 @@
 
         <div class="container">
 
-            <form class="registrasi" method="POST" action="login_user.php">
+            <form class="registrasi" method="POST" action="login.php">
                 <div class="shadow p-3 mb-5 bg-white rounded">
                     <h3>Formulir Registrasi</h3><br>
 
@@ -67,8 +93,8 @@
 
                     <br>
 
-                    <a style="color:blue;"> Registrasi Sebagai ? </a>
-                    <div class="form-check form-check-inline">
+                    <a class="text-primary"> Registrasi Sebagai ? </a>
+                    <div class="form-check form-check-inline" style="padding-left:10px;">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                             value="option1">
                         <label class="form-check-label" for="inlineRadio1">User</label>

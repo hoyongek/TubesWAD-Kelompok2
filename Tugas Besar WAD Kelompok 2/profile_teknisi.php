@@ -11,20 +11,23 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
 
+
     <title>
         Home Website Find Technician!
     </title>
+
     <style>
-        .checked{
+    .checked {
         color: orange;
     }
     </style>
+
+
 </head>
 
 <body>
-
     <!--Batas TOP NAV-->
-    <div class="top container-fluid">
+    <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
         <a href="list_teknisi.php">List Teknisi</a>
@@ -33,15 +36,18 @@
 
         <div class="dropdown">
             <h5 class="halo">Halo, Guest</h5>
-            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="#">My Booking (User)</a>
+                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="dropdown-item" href="admin.php">Admin</a>
             </div>
         </div>
     </div>
@@ -49,49 +55,70 @@
 
     <div class="isi_body">
 
-        <h1 style="text-align: center;" class="display-4">Profile Teknisi</h1><br><br>
+        <h1 style="text-align: center;" class="display-4">Profile Teknisi</h1>
 
         <div class="container">
-            <div class="form-row">
-            <div class="form-group col-md-4">
-                <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (13).png" class="d-block w-100" alt="...">
-                <br>
-                <input type="button" onclick="location.href='list_teknisi.php'" name="submit" class="btn bg-danger btn-lg" value="Kembali">
-                <input type="button" onclick="location.href='book_now.php'" name="submit" class="btn bg-primary btn-lg" value="Book Now">
-                
-            </div>
-            <div class="col-md-1">
-                <p>   </p>
-            </div>
-            <div class="col-md-3">
-                <h4>Profile</h4><br>
-                  <p class="card-title">Nama : Hari Ardiyo</p>
-                  <p class="card-title">No. Telepon : 0812343483953</p>
-                  <p class="card-title">Rating : Bintang 5</p>
-                  <p class="card-title">Teknisi : Kelistrikan</p>
-                </div>
-                <div class="col-md-1">
-                <p>   </p>
-            </div>
-            <div class="col-md-3">
-                <h4>Deskripsi</h4><br>
-                <p>Saya sudah 20 tahun menjadi teknisi dibidang kelistrikan. Sudah memperbaii banyak kerusakan di banyak rumah. Bisa memperbaiki segala kerusakan yang berbau dengan kelistrikan. Semoga selalu puas dengan hasil kerja saya.</p>
-            </div>
-        </div>
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="form-row">
+                    <div class="profile_teknisi col-3">
+                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (13).png"
+                            class="d-block w-100 rounded">
+                    </div>
 
-        <hr color="blue" width="100%" size="10" noshade align="right">
-        
+                    <div class="profile_teknisi col-3">
+                        <h4>Identitas</h4><br>
+                        <p class="card-title">Nama : Hari Ardiyo</p>
+                        <hr>
+                        <p class="card-title">No. Telepon : 0812343483953</p>
+                        <hr>
+                        <p class="card-title">Rating : Bintang 5</p>
+                        <hr>
+                        <p class="card-title">Teknisi : Kelistrikan</p>
+                    </div>
+
+                    <div class="profile_teknisi col-6">
+                        <h4>Deskripsi</h4><br>
+                        <p>Saya sudah 20 tahun menjadi teknisi dibidang kelistrikan. Sudah memperbaii banyak kerusakan
+                            di
+                            banyak rumah. Bisa memperbaiki segala kerusakan yang berbau dengan kelistrikan. Semoga
+                            selalu
+                            puas dengan hasil kerja saya.</p>
+                    </div>
+                </div>
+
+                <div class="tombol_profile_teknisi" style="margin-left:750px">
+                    <input type="button" onclick="location.href='list_teknisi.php'" name="kembali"
+                        class="btn btn-danger " value="Kembali">
+                    <input type="button" onclick="location.href='book_now.php'" name="book_now" class="btn btn-primary"
+                        value="Book Now">
+                    <input type="button" onclick="location.href='book_now.php'" name="update" class="btn btn-success"
+                        value="Update">
+                </div>
+
+
+            </div>
+
+
+            <hr color="blue" width="100%" size="10" noshade align="right">
+
             <h4>Ulasan dari User Lain</h4><br>
-            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/noprofile.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/noprofile.jpg"
+                preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span><br>
-            <p>Mantap rumah saya jadi bisa lagi lampu tamannya. Seveng banget dehh.. Bapaknya juga ramah bangett &hearts; </p><br>
-        
-            
-            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava1.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+            <p>Mantap rumah saya jadi bisa lagi lampu tamannya. Seveng banget dehh.. Bapaknya juga ramah bangett
+                &hearts; </p><br>
+
+
+            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava1.png"
+                preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -99,8 +126,11 @@
             <span class="fa fa-star"></span><br>
             <p>Bapaknya ramah bangett &#128522; </p><br>
 
-            
-            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava2.jfif" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+
+            <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava2.jfif"
+                preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -108,9 +138,9 @@
             <span class="fa fa-star"></span><br>
             <p>Rekomen banget pokonyaa &smile; </p>
 
+        </div>
     </div>
-</div>
-    
+
 
 
 
