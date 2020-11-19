@@ -281,6 +281,7 @@
                                         class="rounded" width="200"> </div>
                                 <div class="ml-3 w-100">
                                     <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+
                                     <div
                                         class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
                                         <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
@@ -292,6 +293,7 @@
                                         <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
                                                 class="number3">8.9</span> </div>
                                     </div>
+
                                     <div class="button mt-2 d-flex flex-row align-items-center"> <button
                                             class="btn btn-sm btn-outline-success w-100"
                                             onclick="location.href='profile_teknisi.php'">Profile</button>
