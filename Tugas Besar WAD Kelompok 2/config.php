@@ -1,10 +1,8 @@
 <?php
 
-$databaseHost = 'localhost:2222';
-$databaseName = 'tubes_wad';
+$databaseHost = 'localhost';
+$databaseName = 'findtech';
 $databaseUsername = 'root';
 $databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
-
-?>
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);

@@ -1,17 +1,19 @@
 <?php
 function koneksi()
 {
-  return mysqli_connect('localhost', 'root', '', 'db_technisian');
+  return mysqli_connect('localhost', 'root', '', 'findtech');
 }
 
 function query($query)
 {
   $conn = koneksi();
+
   $result = mysqli_query($conn, $query);
 
   if (mysqli_num_rows($result) == 1) {
     return mysqli_fetch_assoc($result);
   }
+
   $rows = [];
   while ($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row;
@@ -63,16 +65,69 @@ function editUser($data)
   return mysqli_affected_rows($kon);
 }
 
-function login($data)
+function userLogin($data)
 {
-  $kon = koneksi();
+  $conn = koneksi();
+
+  $email = htmlspecialchars($data['email']);
+  $password = htmlspecialchars($data['password']);
+
+  $s = "SELECT * FROM user where email = '$email' && password = '$password'";
+
+  $result = mysqli_query($conn, $s);
+
+  $isi = mysqli_fetch_assoc($result);
+  $num = mysqli_num_rows($result);
+
+  if ($num == 1) {
+    $_SESSION['userLogin'] = true;
+    $_SESSION['nama'] = $isi['nama'];
+    $_SESSION['id'] = $isi['id'];
+    header('location: index.php');
+  } else {
+    return ['error' => true, 'pesan' => 'Username/Password Salah!'];
+  }
+}
+
+function teknisiLogin($data)
+{
+  $conn = koneksi();
+
+  $email = htmlspecialchars($data['email']);
+  $password = htmlspecialchars($data['password']);
+
+  $s = "SELECT * FROM technician where email = '$email' && password = '$password'";
+
+  $result = mysqli_query($conn, $s);
+
+  $isi = mysqli_fetch_assoc($result);
+  $num = mysqli_num_rows($result);
+
+  if ($num == 1) {
+    $_SESSION['teknisiLogin'] = true;
+    $_SESSION['nama'] = $isi['nama'];
+    $_SESSION['id'] = $isi['id'];
+    header('location: index.php');
+  } else {
+    return ['error' => true, 'pesan' => 'Username/Password Salah!'];
+  }
+}
+
+function adminLogin($data)
+{
+  $conn = koneksi();
+
   $username = htmlspecialchars($data['username']);
   $password = htmlspecialchars($data['password']);
 
-  if ($username == 'admin' && $password == 'admin') {
-    $_SESSION['login'] = true;
-    header("Location: admin.php");
-    exit;
+  $s = "SELECT * FROM admin where username = '$username' && password = '$password'";
+
+  $result = mysqli_query($conn, $s);
+  $num = mysqli_num_rows($result);
+
+  if ($num == 1) {
+    $_SESSION['adminLogin'] = true;
+    header('location: admin.php');
   } else {
     return ['error' => true, 'pesan' => 'Username/Password Salah!'];
   }
