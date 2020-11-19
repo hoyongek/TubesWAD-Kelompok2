@@ -38,11 +38,12 @@
 
 
         <div class="container">
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <form class="registrasi" method="POST" action="login.php">
+
+            <form class="registrasi" method="POST" action="login_user.php">
+                <div class="shadow p-3 mb-5 bg-white rounded">
                     <h3>Formulir Registrasi</h3><br>
 
-                    <input type="text" class="form-control" placeholder="Username"><br>
+                    <input type="email" class="form-control" placeholder="E-mail"><br>
 
                     <div class="row">
                         <div class="col">
@@ -65,9 +66,8 @@
                     </div>
 
                     <br>
-                    <input type="number" class="form-control" placeholder="No Telfon"><br>
-                    <input type="email" class="form-control" placeholder="E-mail"><br>
 
+                    <a style="color:blue;"> Registrasi Sebagai ? </a>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                             value="option1">
@@ -78,13 +78,17 @@
                             value="option2">
                         <label class="form-check-label" for="inlineRadio2">Teknisi</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Admin</label>
 
-                    <div class="button" style="margin-left:600px;">
-                        <button type="submit" class="btn btn-danger mb-2">Cancel</button>
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <div class="button" style="margin-left:200px;">
+                            <button type="submit" class="btn btn-danger mb-2">Cancel</button>
+                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        </div>
                     </div>
-
-            </div>
+                </div>
 
 
 

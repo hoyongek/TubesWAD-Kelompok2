@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
 
             <form action="" method="POST" style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
                 <div class="shadow p-3 mb-5 bg-white rounded">
-                    <h2 align="center">Login User </h2><br>
+                    <h2 align="center">Login Admin </h2><br>
 
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -80,7 +80,6 @@ if (isset($_POST['login'])) {
                         <a href="login.php">Halaman Login User</a> /
                         <a href="login_teknisi.php">Halaman Login Teknisi</a> /
                         <a href="login_admin.php">Halaman Login Admin</a> /
-
                     </div>
 
                     <div class="form-group">

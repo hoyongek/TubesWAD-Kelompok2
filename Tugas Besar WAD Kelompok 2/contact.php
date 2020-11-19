@@ -45,18 +45,15 @@
         <h1 style="text-align: center;" class="display-4">Contact !</h1>
 
         <div class="container">
+            <!--Penulisan Code Semua Didalam Sini-->
+
+
             <p>Email : Findtechnian@gmail.com </p></br>
             <p>Telephone : 0828890288 </p></br>
             <p>Fax : +6228890288 </p></br>
+
+            <!--Batas Penulisan Code-->
         </div>
-
-
-
-
-
-
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
