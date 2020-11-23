@@ -45,150 +45,273 @@
     <!--Batas TOP NAV-->
 
     <div class="isi_body">
-
         <div class="container">
-            <!--Membuat ROW-->
             <div class="row">
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (13).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <!--Batas Col-->
 
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (16).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (1).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--Batas Col-->
 
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (18).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (2).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--Batas Col-->
 
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (20).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (3).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--Batas Col-->
 
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (2).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (4).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--Batas Col-->
 
-                <!--Batas Col-->
-                <div class="col-sm-4">
-                    <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (8).png" class="card-img-top"
-                            alt="...">
-                        <div class="card-body" style="margin-right: 20px; font-size: 15px;text-align: center;">
-                            Nama : Hari ardiyo
-                            <hr>
-                            Kategori : Kelistrikan
-                            <hr>
-                            Rating : Bintang 5
-                        </div>
-                        <div class="btn" style=" float: right;">
-                            <a href="profile_teknisi.php" class="btn btn-success">Profile</a>
-                            <a href="book_now.php" class="btn btn-primary">Book Now</a>
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (5).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!--Batas Col-->
+
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (6).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (7).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 list_teknisi">
+                    <div class="shadow bg-white rounded">
+                        <div class="card list_teknisi">
+                            <div class="d-flex align-items-center">
+                                <div class="image"> <img
+                                        src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (8).png"
+                                        class="rounded" width="200"> </div>
+                                <div class="ml-3 w-100">
+                                    <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
+
+                                    <div
+                                        class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                        <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
+                                                Selesai</span>
+                                            <span class="number1">38</span>
+                                        </div>
+                                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                                class="number2">980</span> </div>
+                                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span
+                                                class="number3">8.9</span> </div>
+                                    </div>
+
+                                    <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                            class="btn btn-sm btn-outline-success w-100"
+                                            onclick="location.href='profile_teknisi.php'">Profile</button>
+                                        <button class="btn btn-sm btn-primary w-100 ml-2"
+                                            onclick="location.href='book_now.php'">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
 
 
 
             </div>
-            <!--Batas ROW-->
-
-
-
-
         </div>
-    </div>
-
-
-    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

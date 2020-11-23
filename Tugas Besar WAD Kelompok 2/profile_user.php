@@ -7,25 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-
-
 
     <title>
         Home Website Find Technician!
     </title>
-
-    <style>
-    .checked {
-        color: orange;
-    }
-    </style>
-
-
 </head>
 
 <body>
+
     <!--Batas TOP NAV-->
     <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
@@ -55,7 +45,7 @@
 
     <div class="isi_body">
 
-        <h1 style="text-align: center;" class="display-4">Profile Teknisi</h1>
+        <h1 style="text-align: center;" class="display-4">Profile User</h1><br>
 
         <div class="container">
             <div class="shadow bg-white rounded">
@@ -64,11 +54,15 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="profile-img">
-                                <img class="img responsive rounded"
-                                    src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (9).png " width=50% />
+                                <img class="rounded"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                                    alt="" />
                             </div>
                         </div>
-                        <div class="col-md-7">
+
+
+
+                        <div class="col-md-2">
                             <div class="profile-head">
                                 <h4>
                                     Hari Ardityo
@@ -76,25 +70,54 @@
                                 <h5>
                                     Teknisi Listrik
                                 </h5>
-                                <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-
+                                <p class="proile-rating">Rating Aplikasi : <span>8/10</span></p>
+                                <p class="proile-rating">Tanggal Daftar: <span>8/10</span></p>
 
                             </div>
                         </div>
+
+                        <div class="col-md-5 profile_user_statistik">
+                            <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
+                                <div class="d-flex flex-column"> <span class="tugas_selesai">Pesanan Selesai</span>
+                                    <span class="number1">38</span>
+                                </div>
+
+                                <div class="d-flex flex-column"> <span class="followers">Jumlah Feedback</span> <span
+                                        class="number2">980</span> </div>
+                                <div class="d-flex flex-column"> <span class="rating">Pesanan Di Cancel</span>
+                                    <span class="number3">8.9</span>
+                                </div>
+                            </div>
+
+                            <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
+                                <div class="d-flex flex-column"> <span class="tugas_selesai">Points</span>
+                                    <span class="number1">1000</span>
+                                </div>
+
+                                <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
+                                        class="number2">980</span> </div>
+                                <div class="d-flex flex-column"> <span class="rating">Following</span> <span
+                                        class="number3">8.9</span> </div>
+                            </div>
+
+                        </div>
+
+
 
                         <div class="col-md-2">
                             <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                         </div>
                     </div>
 
+
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="true">Deteil</a>
+                                aria-controls="home" aria-selected="true">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                aria-controls="profile" aria-selected="false">Deskripsi</a>
+                                aria-controls="profile" aria-selected="false">Timeline</a>
                         </li>
                     </ul>
 
@@ -102,45 +125,43 @@
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label>First Name</label>
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
                                     </div>
-                                    <div class="col-md-4">
-                                        <p>Hari</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label>Last Name</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p>Ardityo</p>
+                                    <div class="col-md-6">
+                                        <p>Kshiti123</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Kshiti Ghelani</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <label>Email</label>
                                     </div>
-                                    <div class="col-md-4">
-                                        <p>hari_ardityo@gmail.com</p>
+                                    <div class="col-md-6">
+                                        <p>kshitighelani@gmail.com</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <label>Phone</label>
                                     </div>
-                                    <div class="col-md-4 ">
+                                    <div class="col-md-6">
                                         <p>123 456 7890</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label>Alamat</label>
+                                    <div class="col-md-6">
+                                        <label>Profession</label>
                                     </div>
-                                    <div class="col-md-4 ">
-                                        <p>Perum Mulya Sari, Jl. Candi Mendut No.36, RT 011/RW 005 (Belakang Polsek
-                                            Lowokwaru), Kel. Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur,
-                                            65142r</p>
+                                    <div class="col-md-6">
+                                        <p>Web Developer and Designer</p>
                                     </div>
                                 </div>
                             </div>
@@ -198,56 +219,8 @@
             </form>
 
         </div>
-
-
-        <hr color="blue" width="100%" size="10" noshade align="right">
-
-        <h4>Ulasan dari User Lain</h4><br>
-        <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/noprofile.jpg"
-            preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span><br>
-        <p>Mantap rumah saya jadi bisa lagi lampu tamannya. Seveng banget dehh.. Bapaknya juga ramah bangett
-            &hearts; </p><br>
-
-
-        <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava1.png"
-            preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span><br>
-        <p>Bapaknya ramah bangett &#128522; </p><br>
-
-
-        <img class="bd-placeholder-img rounded-circle" width="50" height="50" src="gambar/ava2.jfif"
-            preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span><br>
-        <p>Rekomen banget pokonyaa &smile; </p>
-
-
-
-
-
     </div>
     </div>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

@@ -41,7 +41,7 @@ if (!isset($_SESSION['userLogin'])) {
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="profile_user.php">Profile User</a>
                 <a class="dropdown-item" href="#">My Booking (User)</a>
                 <a class="dropdown-item" href="#">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
@@ -63,7 +63,7 @@ if (!isset($_SESSION['userLogin'])) {
 
                 <div class="col-sm-4 1">
                     <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
+                    <div class="card index">
                         <img src="gambar\1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['userLogin'])) {
 
                 <div class="col-sm-4 2">
                     <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
+                    <div class="card index">
                         <img src="gambar\2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">
@@ -109,7 +109,7 @@ if (!isset($_SESSION['userLogin'])) {
 
                 <div class="col-sm-4 3">
                     <!--Membuat Card-->
-                    <div class="card" style="width: 18rem;">
+                    <div class="card index">
                         <img src="gambar\3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">
