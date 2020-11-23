@@ -24,19 +24,30 @@ function query($query)
 
 function addUser($data)
 {
-  $kon = koneksi();
+  $conn = koneksi();
   $nama = htmlspecialchars($data['nama']);
   $email = htmlspecialchars($data['email']);
-  $username = htmlspecialchars($data['username']);
   $password = htmlspecialchars($data['password']);
-  $no_hp = htmlspecialchars($data['no_hp']);
-  $role = 2;
 
-  $querry = "INSERT INTO regist_user VALUES
-						('$username', '$role', '$nama', '$password', '$email', '$no_hp', '$password')";
+  $querry = "INSERT INTO user VALUES
+						(null, '$nama', '$email', '$password', null, null, null, 'User')";
 
-  mysqli_query($kon, $querry) or die(mysqli_error($kon));
-  return mysqli_affected_rows($kon);
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
+
+function addTeknisi($data)
+{
+  $conn = koneksi();
+  $nama = htmlspecialchars($data['nama']);
+  $email = htmlspecialchars($data['email']);
+  $password = htmlspecialchars($data['password']);
+
+  $querry = "INSERT INTO technician VALUES
+						(null, '$nama', '$email', '$password', null, null, null, 'Technician', null)";
+
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
 }
 
 function deleteUser($id)
