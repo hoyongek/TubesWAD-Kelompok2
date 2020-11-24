@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2020 at 02:31 PM
+-- Generation Time: Nov 23, 2020 at 09:01 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -67,12 +67,19 @@ CREATE TABLE `technician` (
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `no_hp` bigint(13) NOT NULL,
-  `alamat` varchar(300) NOT NULL,
-  `gambar` text NOT NULL,
+  `no_hp` bigint(13) DEFAULT NULL,
+  `alamat` varchar(300) DEFAULT NULL,
+  `gambar` text DEFAULT NULL,
   `roles` varchar(10) NOT NULL DEFAULT 'Technician',
-  `skills` varchar(250) NOT NULL
+  `skills` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `technician`
+--
+
+INSERT INTO `technician` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`, `skills`) VALUES
+(1, 'tech', 'tech@test', 'tech', NULL, NULL, NULL, 'Technician', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,7 +103,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`) VALUES
-(1, 'test', 'test@t.com', 'test', '', '', '', 'User');
+(1, 'test', 'test@t.com', 'test', '', '', '', 'User'),
+(2, 'coba', 'coba@user', 'coba', NULL, NULL, NULL, 'User');
 
 --
 -- Indexes for dumped tables
@@ -148,13 +156,13 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `technician`
 --
 ALTER TABLE `technician`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

@@ -105,7 +105,73 @@
 
 
                         <div class="col-md-2">
-                            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                            <!--Modal-->
+                            <button type="button" class="profile-edit-btn" data-toggle="modal"
+                                data-target=".bd-example-modal-lg" id="modal">Edit Profile</button>
+
+
+                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content" style="padding:20px;">
+
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="email@User.com"
+                                                    name="email" readonly>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Name" name="nama">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="No HP"
+                                                    name="phone">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                    placeholder="Alamat Anda"></textarea>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Password" name="password">
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Tulis Ulang Password Anda" name="pw">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="customFile">
+                                                    <label class="custom-file-label" for="customFile">Upload
+                                                        Photo</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <button type="submit" name="cancel"
+                                                    class="btn btn-danger">Cancel</button>
+                                                <button type="submit" name="update"
+                                                    class="btn btn-primary">Update</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Modal-->
+
+
                         </div>
                     </div>
 
@@ -117,27 +183,20 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                aria-controls="profile" aria-selected="false">Timeline</a>
+                                aria-controls="profile" aria-selected="false">History</a>
                         </li>
                     </ul>
 
                     <div class="col-md-12">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>User Id</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>Kshiti123</p>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Name</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Kshiti Ghelani</p>
+                                        <p>Nama_user</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -145,7 +204,7 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>kshitighelani@gmail.com</p>
+                                        <p>Email@user.com</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -158,10 +217,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Profession</label>
+                                        <label>Alamat</label>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>Web Developer and Designer</p>
+                                        <p>Jln. alamat User Kecamatan User. Pos 129388932. Banteng. Indonesia.</p>
                                     </div>
                                 </div>
                             </div>
@@ -217,6 +276,8 @@
                     </div>
             </div>
             </form>
+
+
 
         </div>
     </div>
