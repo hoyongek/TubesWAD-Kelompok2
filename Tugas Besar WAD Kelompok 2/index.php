@@ -3,10 +3,8 @@ include 'function.php';
 
 session_start();
 if (!isset($_SESSION['userLogin'])) {
-    if (!isset($_SESSION['userLogin'])) {
-        header("Location: login.php");
-        exit;
-    }
+    header("Location: login.php");
+    exit;
 }
 ?>
 
