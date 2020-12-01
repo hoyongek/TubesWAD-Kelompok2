@@ -1,7 +1,7 @@
 <?php
 function koneksi()
 {
-  return mysqli_connect('localhost:3307', 'root', '', 'findtech');
+  return mysqli_connect('localhost', 'root', '', 'findtech');
 }
 
 function query($query)
@@ -57,52 +57,58 @@ function deleteUser($id)
   return mysqli_affected_rows($conn);
 }
 
-function editUser($data)
+function uploadGambar()
 {
-  $conn = koneksi();
-  $id = $data['id'];
-  $nama = htmlspecialchars($data['nama']);
-  $email = htmlspecialchars($data['email']);
-  $password = htmlspecialchars($data['password']);
-  $no_hp = htmlspecialchars($data['no_hp']);
-  $alamat = htmlspecialchars($data['alamat']);
-  $gambarLama = htmlspecialchars($data['gambarLama']);
-
-  $rand = rand();
-  $ekstensi =  array('png', 'jpg', 'jpeg');
-  $filename = $_FILES['gambar']['name'];
+  $nama = $_FILES['gambar']['name'];
+  $tipe = $_FILES['gambar']['type'];
   $ukuran = $_FILES['gambar']['size'];
-  $ext = pathinfo($filename, PATHINFO_EXTENSION);
+  $tmp = $_FILES['gambar']['tmp_name'];
 
-  if (!in_array($ext, $ekstensi)) {
-    echo "<script>
-          alert('Ekstensi file tidak termasuk!');
-          document.location.href = 'profile_user.php';
-          </script>";
-  } else {
-    if ($ukuran < 844444) {
-      $x = $rand . '_' . $filename;
-      move_uploaded_file($_FILES['gambar']['tmp_name'], 'gambar/user/' . $x);
-      $querry = "UPDATE user SET
-                nama='$nama', email='$email', password='$password', no_hp='$no_hp', alamat='$alamat', gambar='$x' WHERE id = '$id'";
-      mysqli_query($conn, $querry) or die(mysqli_error($conn));
-      if (mysqli_affected_rows($conn) > 0) {
-        unlink("gambar/user/$gambarLama");
-        echo "<script>
-					    alert('Data berhasil dirubah');
-						  document.location.href = 'profile_user.php';
-		          </script>";
-      }
-    } else {
-      echo "<script>
-						alert('Ukuran file terlalu besar!');
-						document.location.href = 'profile_user.php';
-		        </script>";
+  $list = array('jpg', 'jpeg', 'png');
+  $ext = pathinfo($nama, PATHINFO_EXTENSION);
+
+  if (!in_array($ext, $list)) {
+    echo "<script>alert('Only .jpeg .jpg .png')</script>";
+    return false;
+  }
+
+  if ($tipe != 'image/jpeg' && $tipe != 'image/png') {
+    echo "<script>alert('Its not an image')</script>";
+    return false;
+  }
+
+  if ($ukuran >= 5444444) {
+    echo "<script>alert('Image size is to big!')</script>";
+    return false;
+  }
+
+  $x = rand() . '_' . $nama;
+  $conn = koneksi();
+  $id = $_POST['id'];
+  $gambarLama = $_POST['gambarLama'];
+
+  if ($_POST['roles'] == 'User') {
+    move_uploaded_file($tmp, 'gambar/user/' . $x);
+    $query = "UPDATE user SET gambar = '$x' where id = '$id'";
+    $update = mysqli_query($conn, $query);
+
+    if (!empty($gambarLama)) {
+      unlink("gambar/user/$gambarLama");
     }
+    echo "<script>alert('Image has been changed!')</script>";
+  } else if ($_POST['roles'] == 'Technician') {
+    move_uploaded_file($tmp, 'gambar/user/' . $x);
+    $query = "UPDATE technician SET gambar = '$x' where id = '$id'";
+    $update = mysqli_query($conn, $query);
+
+    if (!empty($gambarLama)) {
+      unlink("gambar/user/$gambarLama");
+    }
+    echo "<script>alert('Image has been changed!')</script>";
   }
 }
 
-function editUser2($data)
+function editUser($data)
 {
   $conn = koneksi();
   $id = $data['id'];
@@ -119,6 +125,28 @@ function editUser2($data)
     echo "<script>
 					alert('Data berhasil dirubah');
 					document.location.href = 'profile_user.php';
+          </script>";
+  }
+}
+
+function editTeknisi($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+  $nama = htmlspecialchars($data['nama']);
+  $email = htmlspecialchars($data['email']);
+  $password = htmlspecialchars($data['password']);
+  $no_hp = htmlspecialchars($data['no_hp']);
+  $alamat = htmlspecialchars($data['alamat']);
+  $expertise = implode(",", $_POST['expertise']);
+
+  $querry = "UPDATE technician SET
+            nama='$nama', email='$email', password='$password', no_hp='$no_hp', alamat='$alamat', expertise='$expertise' WHERE id = '$id'";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Data berhasil dirubah');
+					document.location.href = 'profile_teknisi.php';
           </script>";
   }
 }
@@ -165,7 +193,7 @@ function teknisiLogin($data)
     $_SESSION['teknisiLogin'] = true;
     $_SESSION['nama'] = $isi['nama'];
     $_SESSION['id'] = $isi['id'];
-    header('location: index.php');
+    header('location: profile_teknisi.php');
   } else {
     return ['error' => true, 'pesan' => 'Username/Password Salah!'];
   }
