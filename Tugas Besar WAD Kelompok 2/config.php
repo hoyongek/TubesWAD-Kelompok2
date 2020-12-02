@@ -1,6 +1,6 @@
 <?php
 
-$databaseHost = 'localhost';
+$databaseHost = 'localhost:3307';
 $databaseName = 'findtech';
 $databaseUsername = 'root';
 $databasePassword = '';

@@ -65,15 +65,15 @@ while($user_data = mysqli_fetch_array($result))
         <a href="contact.php">Contact</a>
 
         <div class="dropdown">
-            <h5 class="halo">Halo, Guest</h5>
+            <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
             <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">My Booking (User)</a>
-                <a class="dropdown-item" href="#">My Order (Teknisi)</a>
+                <a class="dropdown-item" href="profile_user.php">Profile User</a>
+                <a class="dropdown-item" href="my_booking_user.php">My Booking (User)</a>
+                <a class="dropdown-item" href="my_order_teknisi.php">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
                 <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>

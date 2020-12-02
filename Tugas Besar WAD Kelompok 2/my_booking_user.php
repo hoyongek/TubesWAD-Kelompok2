@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 <body>
 
     <!--Batas TOP NAV-->
-    <div class="top container-fluid">
+    <div class="top container-fluid fixed-top ">
         <img class="logo_navbar" src="gambar\logo.png">
         <a href="index.php">Home</a>
         <a href="list_teknisi.php">List Teknisi</a>
@@ -39,16 +39,19 @@ if (isset($_POST['login'])) {
         <a href="contact.php">Contact</a>
 
         <div class="dropdown">
-            <h5 class="halo">Halo, Guest</h5>
-            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Booking</a>
+                <a class="dropdown-item" href="profile_user.php">Profile User</a>
+                <a class="dropdown-item" href="my_booking_user.php">My Booking (User)</a>
+                <a class="dropdown-item" href="my_order_teknisi.php">My Order (Teknisi)</a>
                 <a class="dropdown-item" href="regist_user.php">Register</a>
+                <a class="dropdown-item" href="login.php">Login</a>
                 <a class="dropdown-item" href="logout.php">Log Out</a>
+                <a class="dropdown-item" href="admin.php">Admin</a>
             </div>
         </div>
     </div>
@@ -59,51 +62,171 @@ if (isset($_POST['login'])) {
         <h1 style="text-align: center;" class="display-4">My Booking User</h1><br>
 
         <div class="container">
-                <div class="col-12" style="padding:50px !important;">
-        <div class="shadow-sm" style="padding:50px;">
-          <table class="" style="width:100%">
-            <tr>
-              <th>No</th>
-              <th>Kategori</th>
-              <th></th>
-            </tr>
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="sm-12" style="background: white; padding-left:10px;">
+                    <h5>Transaksi Saat Ini</h5>
+                </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Nama Teknisi</th>
+                            <th scope="col">Harga /Jam</th>
+                            <th scope="col">Status Pesanan</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target=".modal-update-status" id="modal">Update Status</button>
 
-  <tr>
-    <td width="10%"><?php echo $i++; ?></td>
-    <td width="60%"><?php echo $row['kategori']; ?></td>
+                                <button type="button" class="btn btn-danger">Cancel</button>
 
-    <td width="5%">
-      <form class="" action="#" method="post">
-        <button type="submit" name="delete" class="btn btn-danger" value="<?php echo $row['id']; ?>">Hapus</button>
-      </form>
-    </td>
-  </tr>
+                                <!--Modal-->
+                                <div class="modal fade modal-update-status" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="padding:20px;">
+                                            <form action="" method="POST" enctype="multipart/form-data">
 
-</table>
-</div>
-</div>
-</div>
+                                                <h5> Status Pesanan </h5>
+                                                <select class="custom-select">
+                                                    <option selected> Status Anda</option>
+                                                    <option value="1">Pesanan Diajukan</option>
+                                                    <option value="2">Pesanan Diterima Teknisi</option>
+                                                    <option value="3">Teknisi Sedang Dalam Perjalanan </option>
+                                                    <option value="3">Pesanan Selesai </option>
+                                                </select>
 
-</div>
+                                                <div class="modal-footer">
+                                                    <div class="form-group">
+                                                        <button type="submit" name="cancel" class="btn btn-danger"
+                                                            data-dismiss="modal">Cancel</button>
+                                                        <input type="submit" name="updateGambar" class="btn btn-primary"
+                                                            value="Update">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Modal-->
+                            </td>
+                        </tr>
 
-<?php
-if (isset($_POST['delete'])) {
-$id = $_POST['delete'];
-$query = mysqli_query($conn, "DELETE FROM booking_table WHERE id = '$id'");
-if ($query) {
-  echo "<script>
-    alert('berhasil dihapus');
-    location.replace('my_booking_user.php')
-  </script>";
-  }
-}
 
-?>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">
+
+                <div class="sm-12" style="background: white; padding-left:10px;">
+                    <h5>Transaksi Selesai</h5>
+                </div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Booking ID</th>
+                            <th scope="col">Nama Teknisi</th>
+                            <th scope="col">Harga /Jam</th>
+                            <th scope="col">Status Pesanan</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target=".modal-review" id="modal">Berikan Ulasan</button>
+
+                                <!--Modal-->
+                                <div class="modal fade modal-review" tabindex="-1" role="dialog"
+                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="padding:20px;">
+                                            <form action="" method="POST" enctype="multipart/form-data">
+
+                                                <h5> Berikan Review </h5>
+                                                <div class="form-group">
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                        rows="3"></textarea>
+                                                </div>
+
+                                                <select class="custom-select">
+                                                    <option selected> Rating Dari Anda</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+
+                                                </select>
+
+                                                <div class="modal-footer">
+                                                    <div class="form-group">
+
+
+
+                                                        <button type="submit" name="cancel" class="btn btn-danger"
+                                                            data-dismiss="modal">Submit</button>
+                                                        <input type="submit" name="updateGambar" class="btn btn-primary"
+                                                            value="Update">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Modal-->
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
+
+
+
+
+
 
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
