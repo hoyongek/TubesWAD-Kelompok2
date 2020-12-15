@@ -35,7 +35,7 @@ $query = "SELECT * FROM technician WHERE id = $id";
 $conn = koneksi();
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
-$dataExpertise = explode(',', $data['skills']);
+$dataExpertise = explode(',', $data['expertise']);
 
 $gambar = "noprofile.jpg";
 if (!empty($data['gambar'])) {
@@ -54,9 +54,6 @@ if (!empty($data['gambar'])) {
   <title>
     Home Website Find Technician!
   </title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style>
     .profile {
       background-repeat: no-repeat;

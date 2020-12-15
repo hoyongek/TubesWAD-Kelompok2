@@ -185,7 +185,6 @@ function teknisiLogin($data)
   $s = "SELECT * FROM technician where email = '$email' && password = '$password'";
 
   $result = mysqli_query($conn, $s);
-
   $isi = mysqli_fetch_assoc($result);
   $num = mysqli_num_rows($result);
 

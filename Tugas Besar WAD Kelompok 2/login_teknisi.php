@@ -70,7 +70,7 @@ if (isset($_POST['teknisiLogin'])) {
 
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" autocomplete="on">
+            <input type="password" name="password" class="form-control">
           </div>
           <div class="form-group" style="margin-left:0px;">
             <button type="submit" name="teknisiLogin" class="btn btn-primary">Login</button>
