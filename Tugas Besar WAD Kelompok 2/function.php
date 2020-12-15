@@ -208,10 +208,12 @@ function adminLogin($data)
   $s = "SELECT * FROM admin where username = '$username' && password = '$password'";
 
   $result = mysqli_query($conn, $s);
+  $isi = mysqli_fetch_assoc($result);
   $num = mysqli_num_rows($result);
 
   if ($num == 1) {
     $_SESSION['adminLogin'] = true;
+    $_SESSION['nama'] = $isi['nama'];
     header('location: admin.php');
   } else {
     return ['error' => true, 'pesan' => 'Username/Password Salah!'];

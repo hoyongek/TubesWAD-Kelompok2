@@ -24,7 +24,6 @@ if (!isset($_SESSION['userLogin'])) {
 </head>
 
 <body>
-
   <!--Batas TOP NAV-->
   <div class="top container-fluid fixed-top ">
     <img class="logo_navbar" src="gambar\logo.png">

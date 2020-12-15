@@ -1,28 +1,25 @@
 <?php
 session_start();
-
-include "function.php";
-
-if (isset($_SESSION['userLogin'])) {
-  header("Location: index.php");
+if (!isset($_SESSION['teknisiLogin'])) {
+  header("Location: login_teknisi.php");
   exit;
 }
 
-if (isset($_POST['userLogin'])) {
-  $userLogin = userLogin($_POST);
-}
+require 'function.php';
 ?>
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Hello, world!</title>
 
+  <title>
+    Home Website Find Technician!
+  </title>
 </head>
 
 <body>
@@ -34,9 +31,8 @@ if (isset($_POST['userLogin'])) {
     <a href="list_teknisi.php">List Teknisi</a>
     <a href="aboutUs.php">About Us</a>
     <a href="contact.php">Contact</a>
-
     <div class="dropdown">
-      <h5 class="halo">Hello</h5>
+      <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
       <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         My Account
       </a>
@@ -54,39 +50,46 @@ if (isset($_POST['userLogin'])) {
   <!--Batas TOP NAV-->
 
   <div class="isi_body">
+    <h1 style="text-align: center;" class="display-4">My Order</h1><br>
     <div class="container">
+      <div class="col-12" style="padding:50px !important;">
+        <div class="shadow-sm" style="padding:50px;">
+          <table class="" style="width:100%">
+            <tr>
+              <th>ID</th>
+              <th>Kategori</th>
 
-      <form action="" method="POST" style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-          <h2 align="center">Login User </h2><br>
+              <th></th>
+            </tr>
+            <tr>
+              <td width="10%"><?php echo $i++; ?></td>
+              <td width="60%"><?php echo $row['kategori']; ?></td>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" class="form-control" autofocus autocomplete="on">
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" autocomplete="off">
-          </div>
-          <div class="form-group" style="margin-left:0px;">
-            <button type="submit" name="userLogin" class="btn btn-primary">Login</button>
-            <a button type="submit" name="registrasi" class="btn btn-primary" href="regist_user.php">Registrasi</button></a>
-            <label>Belum Punya Akun ?</label>
-          </div>
-          <div class="login_sebagai">
-            <a href="login_teknisi.php">Halaman Login Teknisi</a> /
-            <a href="login_admin.php">Halaman Login Admin</a> /
-          </div>
-
-          <div class="form-group">
-            <?php if (isset($userLogin['error'])) : ?>
-              <p style="color: red; font-style: italic;"><?= $userLogin['pesan']; ?></p>
-            <?php endif; ?>
-          </div>
-      </form>
+              <td width="5%">
+                <form class="" action="#" method="post">
+                  <button type="submit" name="delete" class="btn btn-danger" value="<?php echo $row['id']; ?>">Hapus</button>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
+
+  <?php
+  if (isset($_POST['delete'])) {
+    $id = $_POST['delete'];
+    $query = mysqli_query($conn, "DELETE FROM booking_table WHERE id = '$id'");
+    if ($query) {
+      echo "<script>
+    alert('berhasil dihapus');
+    location.replace('myorder_teknisi.php')
+  </script>";
+    }
+  }
+  ?>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">

@@ -5,6 +5,12 @@ $conn = koneksi();
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
 $dataExpertise = explode(',', $data['expertise']);
+
+session_start();
+if (!isset($_SESSION['userLogin'])) {
+  header("Location: login.php");
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +27,6 @@ $dataExpertise = explode(',', $data['expertise']);
 </head>
 
 <body>
-
   <!--Batas TOP NAV-->
   <div class="top container-fluid fixed-top ">
     <img class="logo_navbar" src="gambar\logo.png">
@@ -31,12 +36,12 @@ $dataExpertise = explode(',', $data['expertise']);
     <a href="contact.php">Contact</a>
 
     <div class="dropdown">
-      <h5 class="halo">Halo, Guest</h5>
-      <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
+      <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         My Account
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="profile_user.php">Profile User</a>
         <a class="dropdown-item" href="#">My Booking (User)</a>
         <a class="dropdown-item" href="#">My Order (Teknisi)</a>
         <a class="dropdown-item" href="regist_user.php">Register</a>

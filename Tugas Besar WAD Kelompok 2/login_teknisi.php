@@ -37,14 +37,14 @@ if (isset($_POST['teknisiLogin'])) {
     <a href="contact.php">Contact</a>
 
     <div class="dropdown">
-      <h5 class="halo">Halo, Guest</h5>
-      <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <h5 class="halo">Hello</h5>
+      <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         My Account
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">My Booking (User)</a>
-        <a class="dropdown-item" href="#">My Order (Teknisi)</a>
+        <a class="dropdown-item" href="profile_user.php">Profile User</a>
+        <a class="dropdown-item" href="my_booking_user.php">My Booking (User)</a>
+        <a class="dropdown-item" href="my_order_teknisi.php">My Order (Teknisi)</a>
         <a class="dropdown-item" href="regist_user.php">Register</a>
         <a class="dropdown-item" href="login.php">Login</a>
         <a class="dropdown-item" href="logout.php">Log Out</a>
@@ -53,12 +53,8 @@ if (isset($_POST['teknisiLogin'])) {
     </div>
   </div>
   <!--Batas TOP NAV-->
-
   <div class="isi_body">
-
-
     <div class="container">
-
       <form action="" method="POST" style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
         <div class="shadow p-3 mb-5 bg-white rounded">
           <h2 align="center">Login Teknisi </h2><br>
@@ -70,7 +66,7 @@ if (isset($_POST['teknisiLogin'])) {
 
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password" class="form-control" autocomplete="on">
           </div>
           <div class="form-group" style="margin-left:0px;">
             <button type="submit" name="teknisiLogin" class="btn btn-primary">Login</button>
@@ -81,7 +77,6 @@ if (isset($_POST['teknisiLogin'])) {
             <a href="login.php">Halaman Login User</a> /
             <a href="login_admin.php">Halaman Login Admin</a>
           </div>
-
           <div class="form-group">
             <?php if (isset($login['error'])) : ?>
               <p style="color: red; font-style: italic;"><?= $login['pesan']; ?></p>
@@ -90,11 +85,6 @@ if (isset($_POST['teknisiLogin'])) {
       </form>
     </div>
   </div>
-  </div>
-
-
-
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">

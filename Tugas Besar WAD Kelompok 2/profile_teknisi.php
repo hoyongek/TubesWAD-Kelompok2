@@ -5,7 +5,7 @@ include "function.php";
 session_start();
 
 if (!isset($_SESSION['teknisiLogin'])) {
-  header("Location: login.php");
+  header("Location: login_teknisi.php");
   exit;
 }
 
@@ -72,15 +72,16 @@ if (!empty($data['gambar'])) {
     <a href="list_teknisi.php">List Teknisi</a>
     <a href="aboutUs.php">About Us</a>
     <a href="contact.php">Contact</a>
+
     <div class="dropdown">
       <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
       <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         My Account
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">My Booking (User)</a>
-        <a class="dropdown-item" href="#">My Order (Teknisi)</a>
+        <a class="dropdown-item" href="profile_user.php">Profile User</a>
+        <a class="dropdown-item" href="my_booking_user.php">My Booking (User)</a>
+        <a class="dropdown-item" href="my_order_teknisi.php">My Order (Teknisi)</a>
         <a class="dropdown-item" href="regist_user.php">Register</a>
         <a class="dropdown-item" href="login.php">Login</a>
         <a class="dropdown-item" href="logout.php">Log Out</a>
@@ -89,6 +90,7 @@ if (!empty($data['gambar'])) {
     </div>
   </div>
   <!--Batas TOP NAV-->
+
   <div class="isi_body">
     <h1 style="text-align: center;" class="display-4">My Profile</h1><br>
     <div class="container">
