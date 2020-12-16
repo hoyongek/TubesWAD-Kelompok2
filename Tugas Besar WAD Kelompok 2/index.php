@@ -48,8 +48,9 @@ if (!isset($_SESSION['userLogin'])) {
     </div>
     <!--Batas TOP NAV-->
 
+
     <div class="isi_body">
-        <h1 style="text-align: center;" class="display-4">Wellcome !</h1>
+        <h1 style="text-align: center;" class="display-4">Welcome !</h1>
         <div class="container " style="margin-top: 20px;">
             <div class="row">
                 <div class="col-sm-4 1">

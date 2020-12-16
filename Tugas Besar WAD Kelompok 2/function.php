@@ -1,7 +1,7 @@
 <?php
 function koneksi()
 {
-  return mysqli_connect('localhost:3307', 'root', '', 'findtech');
+  return mysqli_connect('localhost', 'root', '', 'findtech');
 }
 
 function query($query)

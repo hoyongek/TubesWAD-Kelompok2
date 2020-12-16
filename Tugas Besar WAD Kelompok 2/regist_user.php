@@ -34,12 +34,16 @@ if (isset($_POST['regis'])) {
 
 <body>
     <!--Batas TOP NAV-->
-    <div class="top container-fluid fixed-top ">
-        <img class="logo_navbar" src="gambar\logo.png">
-        <a href="login.php" style="margin-left:1100px;"> Login</a>
-
-    </div>
+    <nav class="top navbar navbar-light fixed-top">
+    <a class="navbar-brand" href="#">
+      <img class="logo_navbar" src="gambar\logo.png" alt=""> FindTechnician </a>
+      <form class="d-flex">
+          <a href="login.php"> Login</a>
+    </form>
+</nav><br><br>
     <!--Batas TOP NAV-->
+
+
     <div class="isi_body">
         <div class="container">
             <form class="registrasi" method="POST" action="">
@@ -69,13 +73,12 @@ if (isset($_POST['regis'])) {
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="roles" id="inlineRadio2" value="Teknisi">
                         <label class="form-check-label" for="inlineRadio2">Teknisi</label>
-                        <div class="button" style="margin-left:298px;">
-                            <button type="submit" class="btn btn-danger mb-2">Cancel</button>
-                            <input type="submit" name="regis" value="Submit" class="btn btn-primary mb-2">
                         </div>
-                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <input type="submit" name="regis" class="btn btn-primary mb-2" onclick="window.location.href='.....php';" value="Submit" />
                 </div>
-            </form>
+            </div>
+         </form>
         </div>
     </div>
 
