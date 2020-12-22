@@ -33,7 +33,7 @@ if (!isset($_SESSION['userLogin'])) {
         <a href="contact.php">Contact</a>
 
         <div class="dropdown">
-            <h5 class="halo">Halo, <?= $_SESSION['nama']; ?></h5>
+            <p class="halo">  Halo, <?= $_SESSION['nama']; ?></p>
             <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
@@ -54,10 +54,13 @@ if (!isset($_SESSION['userLogin'])) {
         <div class="container">
             <!--Penulisan Code Semua Didalam Sini-->
 
-
-            <p>Email : Findtechnian@gmail.com </p></br>
-            <p>Telephone : 0828890288 </p></br>
-            <p>Fax : +6228890288 </p></br>
+            <div class="card">
+                <div class="card-body">
+                    <p>Email : Findtechnian@gmail.com </p></br>
+                    <p>Telephone : 0828890288 </p></br>
+                    <p>Fax : +6228890288 </p></br>
+            </div>
+        </div>
 
             <!--Batas Penulisan Code-->
         </div>
