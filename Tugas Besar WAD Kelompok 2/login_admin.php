@@ -27,12 +27,13 @@ if (isset($_POST['adminLogin'])) {
 
 <body>
     <!--Batas TOP NAV-->
-    <div class="top container-fluid fixed-top ">
-        <img class="logo_navbar" src="gambar\logo.png">
-
-
-    </div>
+    <nav class="top navbar navbar-light fixed-top">
+    <a class="navbar-brand" href="#">
+      <img class="logo_navbar" src="gambar\logo.png" alt=""> FindTechnician </a>
+</nav><br><br>
     <!--Batas TOP NAV-->
+
+
     <div class="isi_body">
 
 
@@ -51,15 +52,13 @@ if (isset($_POST['adminLogin'])) {
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" class="form-control">
                     </div>
-                    <div class="form-group" style="margin-left:0px;">
-                        <button type="submit" name="adminLogin" class="btn btn-primary">Login</button>
-                        <a button type="submit" name="registrasi" class="btn btn-primary"
-                            href="regist_user.php">Registrasi</button></a>
-                        <label>Belum Punya Akun ?</label>
+                    <div class="form-group text-center" >
+                        <button class="btn btn-primary" name="adminLogin">Login</button><br>
+                        <label>Belum punya akun ?</label><a href="regist_user.php"> Klik disini.</a> 
                     </div>
-                    <div class="login_sebagai">
-                        <a href="login.php">Halaman Login User</a> /
-                        <a href="login_teknisi.php">Halaman Login Teknisi</a>
+                    <div class="login_sebagai text-center">
+                        <a href="login.php">Login sebagai User</a> /
+                        <a href="login_teknisi.php">Login sebagai Teknisi</a>
                     </div>
 
                     <div class="form-group">

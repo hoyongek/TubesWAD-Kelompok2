@@ -1,40 +1,32 @@
 
     .top {
         background-color:white;
-
     }
-
-    .top a {
-        padding-left: 20px;
-        font-size: larger;
-
-    }
-
 
     .dropdown {
         float: right;
         margin-top: 20px;
-       
     }
 
-    .isi_body{
+    .collapse .dropdown{
+        float: right;
+    }
+
+    .registrasi{
         padding-top: 100px;
-        background-color: #F8F9F9;
-
     }
 
-    .container {
-        background-color: #F8F9F9;
-        margin-bottom: 200px;
-    }
-
-    .btn {
-        margin-left: 10px;
-    }
 
     .halo {
-        float: left;
+        float: right;
         margin-top: 5px;
+        padding-right: 10px;
+        text-align: right;
+        font-size: 19px;
+    }
+
+    p{
+        font-size: 19px;
     }
 
     .logo_navbar {
@@ -191,4 +183,7 @@
 /* Profile User & Profile Teknisi */
 
    
-    
+/* Login */
+
+
+/* Contact */
