@@ -4,6 +4,20 @@ if (!isset($_SESSION['userLogin'])) {
   header("Location: login.php");
   exit;
 }
+
+$id_user = $_SESSION['id'];
+
+include 'function.php';
+$id = $_GET['id'];
+$query = "SELECT * FROM technician WHERE id = $id";
+$conn = koneksi();
+$result = mysqli_query($conn, $query);
+$data = mysqli_fetch_assoc($result);
+$dataExpertise = explode(',', $data['expertise']);
+
+if (isset($_POST['Book'])) {
+  pesan($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,59 +64,46 @@ if (!isset($_SESSION['userLogin'])) {
   <!--Batas TOP NAV-->
 
   <div class="isi_body">
-
     <h1 style="text-align: center;" class="display-4">Book Now</h1><br>
-
     <div class="container">
       <div class="shadow p-3 mb-5 bg-white rounded">
-
         <div class="row" style="margin-right:auto;margin-left:auto">
-
-
-
           <div class="col-3">
             <h5>Teknisi</h5><br>
-
             <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (16).png" class="rounded">
-
           </div>
-
 
           <div class="col-3">
-            <h5>Deteil Teknisi</h5><br>
-
+            <h5>Detail Teknisi</h5><br>
             <p>
-              Nama : Hariyo Arditho <br>
+              Nama : <?= $data['nama']; ?><br>
               <hr>
-              No Telfon : 02818998982 <br>
+              No Telfon : <?= $data['no_hp']; ?><br>
               <hr>
-              Rating : Bintang 5 <br>
+              Rating : nope<br>
               <hr>
-              Kategori : Kelistrikan <br>
+              Kategori : <?= $data['expertise']; ?><br>
               <hr>
-
-
             </p>
-
           </div>
 
-
-
           <div class="col-6">
-            <h5>Alamat Anda</h5><br>
-
+            <h5>Alamat Teknisi</h5><br>
             <p>
-              Jln. Dr mansury baru 2 nomor 11, Kecamatan Tangerang SUnggal. Tangerang Utara. POS 120932.
-              Banten. Indonesia <br>
+              <?= $data['alamat']; ?><br>
               <hr>
-
             </p>
-
           </div>
 
           <div class="btn" style="margin-left:800px">
-            <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
-            <a href="my_booking_user.php" class="btn btn-primary">Book Now</a>
+            <div class="row">
+              <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
+              <form action="" method="POST">
+                <input type="hidden" name="id_user" value="<?= $id_user; ?>">
+                <input type="hidden" name="id_technician" value="<?= $data['id']; ?>">
+                <input type="submit" class="btn btn-primary" value="Book Now" name="Book">
+              </form>
+            </div>
           </div>
         </div>
       </div>

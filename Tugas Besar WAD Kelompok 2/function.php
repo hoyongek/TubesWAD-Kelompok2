@@ -1,7 +1,7 @@
 <?php
 function koneksi()
 {
-  return mysqli_connect('localhost:3307', 'root', '', 'findtech');
+  return mysqli_connect('localhost', 'root', '', 'findtech');
 }
 
 function query($query)
@@ -281,4 +281,100 @@ function registrasi($data)
 						(rand(), '$username', '$password_baru')";
   mysqli_query($kon, $query) or die(mysqli_error($kon));
   return mysqli_affected_rows($kon);
+}
+
+function pesan($data)
+{
+  $conn = koneksi();
+  $id_user = htmlspecialchars($data['id_user']);
+  $id_technician = htmlspecialchars($data['id_technician']);
+
+  $querry = "INSERT INTO pesan VALUES
+						(null, null, '$id_user', '$id_technician', 'Menunggu Konfirmasi'), null, null";
+
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Pesanan telah dibuat');
+					document.location.href = 'my_booking_user.php';
+          </script>";
+  }
+}
+
+function hapusPesan($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+
+  $querry = "DELETE FROM pesan WHERE id=$id";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Pesanan di cancel');
+					document.location.href = 'my_booking_user.php';
+          </script>";
+  }
+}
+
+function terimaPesan($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+
+  $querry = "UPDATE pesan SET status='Diterima' WHERE id='$id'";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Pesanan di terima');
+					document.location.href = 'my_order_teknisi.php';
+          </script>";
+  }
+}
+
+function tolakPesan($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+
+  $querry = "UPDATE pesan SET status='Ditolak' WHERE id='$id'";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Pesanan di tolak');
+					document.location.href = 'my_order_teknisi.php';
+          </script>";
+  }
+}
+
+function updatePesan($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+  $status = $data['status'];
+
+  $querry = "UPDATE pesan SET status='$status' WHERE id='$id'";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Status pesanan berhasil dirubah');
+					document.location.href = 'my_order_teknisi.php';
+          </script>";
+  }
+}
+
+function konfirmasiPesan($data)
+{
+  $conn = koneksi();
+  $id = $data['id'];
+  $review = $data['review'];
+  $rating = $data['rating'];
+
+  $querry = "UPDATE pesan SET review='$review', rating=$rating WHERE id='$id'";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Ulasan berhasil ditambahkan!');
+					document.location.href = 'my_booking_user.php';
+          </script>";
+  }
 }

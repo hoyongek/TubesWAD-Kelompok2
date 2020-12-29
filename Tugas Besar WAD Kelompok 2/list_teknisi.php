@@ -52,205 +52,59 @@ if (!isset($_SESSION['userLogin'])) {
   <div class="isi_body">
     <div class="container">
       <div class="row">
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (1).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
+        <?php foreach ($result as $d) { ?>
+          <div class="col-6 list_teknisi">
+            <div class="shadow bg-white rounded">
+              <div class="card list_teknisi">
+                <div class="d-flex align-items-center">
+                  <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (1).png" class="rounded" width="200"> </div>
+                  <div class="ml-3 w-100">
+                    <h4 class="mb-0 mt-0"><?= $d['nama']; ?></h4> <span><?= $d['expertise']; ?></span>
+                    <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                      <div class="d-flex flex-column">
+                        <span class="tugas_selesai">Tugas Selesai</span>
+                        <span class="number1">
+                          <?php
+                          $idTech = $d['id'];
+                          $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$idTech' AND status='Selesai'");
+                          $total = mysqli_num_rows($query);
+                          ?>
+                          <?= $total; ?>
+                        </span>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <span class="followers">Followers</span>
+                        <span class="number2">980</span></div>
+                      <div class="d-flex flex-column">
+                        <span class="rating">Rating</span>
+                        <span class="number3">
+                          <?php
+                          $idTech = $d['id'];
+                          $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$idTech' AND rating!='null'");
+                          $dev = mysqli_num_rows($query);
+                          $result = mysqli_fetch_assoc($query);
+                          $x = 0;
+                          if ($dev != null) {
+                            foreach ($query as $q) {
+                              $x = $q['rating'] + $x;
+                            }
+                            $x = $x / $dev;
+                          ?>
+                          <?php
+                          } ?>
+                          <?= $x; ?>
+                        </span>
+                      </div>
                     </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
+                    <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi_dimata_user.php?id=<?= $d['id']; ?>'">Profile</button>
+                      <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php?id=<?= $d['id']; ?>'">Book Now</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (2).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (3).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (4).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (5).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (6).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (7).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 list_teknisi">
-          <div class="shadow bg-white rounded">
-            <div class="card list_teknisi">
-              <div class="d-flex align-items-center">
-                <div class="image"> <img src="gambar/foto_profile_teknisi/foto_profile_teknisi_list (8).png" class="rounded" width="200"> </div>
-                <div class="ml-3 w-100">
-                  <h4 class="mb-0 mt-0">Hari Ardityo</h4> <span>Teknisi Listrik</span>
-
-                  <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                    <div class="d-flex flex-column"> <span class="tugas_selesai">Tugas
-                        Selesai</span>
-                      <span class="number1">38</span>
-                    </div>
-                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                  </div>
-
-                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-success w-100" onclick="location.href='profile_teknisi.php'">Profile</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2" onclick="location.href='book_now.php'">Book Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
+        <?php } ?>
       </div>
     </div>
   </div>
