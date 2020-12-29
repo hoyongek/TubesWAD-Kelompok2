@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 09:01 AM
+-- Generation Time: Dec 29, 2020 at 06:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -51,10 +51,23 @@ INSERT INTO `admin` (`id`, `nama`, `username`, `password`, `gambar`, `roles`) VA
 
 CREATE TABLE `pesan` (
   `id` int(10) NOT NULL,
-  `description` text NOT NULL,
+  `description` text DEFAULT NULL,
   `id_user` int(10) NOT NULL,
-  `id_technician` int(10) NOT NULL
+  `id_technician` int(10) NOT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'Menunggu Konfirmasi',
+  `review` varchar(255) DEFAULT NULL,
+  `rating` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`id`, `description`, `id_user`, `id_technician`, `status`, `review`, `rating`) VALUES
+(3, NULL, 1, 2, 'Menunggu Konfirmasi', NULL, NULL),
+(4, NULL, 1, 1, 'Selesai', 'Bagus', 8),
+(5, NULL, 1, 1, 'Ditolak', NULL, NULL),
+(6, NULL, 1, 1, 'Selesai', 'bagus', 9);
 
 -- --------------------------------------------------------
 
@@ -71,15 +84,17 @@ CREATE TABLE `technician` (
   `alamat` varchar(300) DEFAULT NULL,
   `gambar` text DEFAULT NULL,
   `roles` varchar(10) NOT NULL DEFAULT 'Technician',
-  `skills` varchar(250) DEFAULT NULL
+  `expertise` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `technician`
 --
 
-INSERT INTO `technician` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`, `skills`) VALUES
-(1, 'tech', 'tech@test', 'tech', NULL, NULL, NULL, 'Technician', NULL);
+INSERT INTO `technician` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`, `expertise`) VALUES
+(1, 'tech', 'tech@test', 'tech', 1012084, 'Jl. Sukabirus', '194446224_Black Bulls.png', 'Technician', 'Computer,AC,Electric'),
+(2, 'test', 'test@email', 'test', 192391, 'Jl. Sukabirus', NULL, 'Technician', 'Computer,AC,Electric'),
+(3, 'ujang', 'ujang@gmail', 'ujang', 12938, 'Jl. Sukapura', NULL, 'Technician', 'Computer,AC,Electric');
 
 -- --------------------------------------------------------
 
@@ -103,8 +118,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`) VALUES
-(1, 'test', 'test@t.com', 'test', '', '', '', 'User'),
-(2, 'coba', 'coba@user', 'coba', NULL, NULL, NULL, 'User');
+(1, 'user', 'user@test', 'user', '080912391', 'Jl. Sukapura', '344170661_peace.jpg', 'User'),
+(2, 'coba', 'coba@user', 'coba', '1928031', NULL, NULL, 'User'),
+(3, 'tambah', 'tambah@user', 'tambah', '0132891', NULL, NULL, 'User');
 
 --
 -- Indexes for dumped tables
@@ -150,19 +166,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `pesan`
 --
 ALTER TABLE `pesan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `technician`
 --
 ALTER TABLE `technician`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
