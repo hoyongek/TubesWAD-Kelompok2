@@ -265,7 +265,7 @@ if (!empty($data['gambar'])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                            aria-controls="profile" aria-selected="false">History</a>
+                            aria-controls="profile" aria-selected="false">Review Dari User</a>
                     </li>
                 </ul>
                 <div class="col-md-12">
@@ -312,26 +312,30 @@ if (!empty($data['gambar'])) {
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <table class="table">
-                                <thead class="thead bg-warning">
-                                    <tr>
-                                        <th scope="col">Booking ID</th>
-                                        <th scope="col">Nama Teknisi</th>
-                                        <th scope="col">Harga /Jam</th>
-                                        <th scope="col">Status Pesanan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <!--Review-->
+                            <div class="shadow p-3 mb-5 bg-white rounded">
+                                <div class="row" style="background: white; padding-left:10px;">
+                                    <div class="col-sm-1">
+                                        <img src="gambar/noprofile.jpg" alt="" class="rounded-circle" width="75"
+                                            height="75">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h4>Rob Simpson</h4> <span>- 20 October, 2018 | Rating : 9 </span>
+
+                                    </div>
+                                    <div class="col-sm-8">
+
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam
+                                            assumenda
+                                            hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!--Review-->
 
 
                     </div>

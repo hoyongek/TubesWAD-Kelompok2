@@ -82,15 +82,15 @@ if (isset($_POST['Book'])) {
                             <hr>
                             Kategori : <?= $data['expertise']; ?><br>
                             <hr>
+                            Alamat Teknisi <?= $data['alamat']; ?>
                         </p>
                     </div>
 
                     <div class="col-6">
-                        <h5>Alamat Teknisi</h5><br>
-                        <p>
-                            <?= $data['alamat']; ?><br>
-                            <hr>
-                        </p>
+                        <h5>Masukkan Keluhan Anda</h5><br>
+
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+
                     </div>
 
                     <div class="btn" style="margin-left:800px">
