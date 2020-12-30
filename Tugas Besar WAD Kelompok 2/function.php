@@ -290,7 +290,7 @@ function pesan($data)
   $id_technician = htmlspecialchars($data['id_technician']);
 
   $querry = "INSERT INTO pesan VALUES
-						(null, null, '$id_user', '$id_technician', 'Menunggu Konfirmasi'), null, null";
+						(null, null, '$id_user', '$id_technician', 'Menunggu Konfirmasi', null, null)";
 
   mysqli_query($conn, $querry) or die(mysqli_error($conn));
   if (mysqli_affected_rows($conn) > 0) {
