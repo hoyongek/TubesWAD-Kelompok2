@@ -286,11 +286,12 @@ function registrasi($data)
 function pesan($data)
 {
   $conn = koneksi();
-  $id_user = htmlspecialchars($data['id_user']);
-  $id_technician = htmlspecialchars($data['id_technician']);
+  $id_user = ($data['id_user']);
+  $id_technician = ($data['id_technician']);
+  $deskripsi = $data['deskripsi'];
 
   $querry = "INSERT INTO pesan VALUES
-						(null, null, '$id_user', '$id_technician', 'Menunggu Konfirmasi', null, null)";
+						(null, '$deskripsi', '$id_user', '$id_technician', 'Menunggu Konfirmasi', null, null)";
 
   mysqli_query($conn, $querry) or die(mysqli_error($conn));
   if (mysqli_affected_rows($conn) > 0) {
