@@ -49,6 +49,12 @@
         text-align: justify;
     }
 
+    .isi_body {
+        background-color:#F8F8F8;
+        margin-top: 60px;
+        padding-top: 20px;
+    }
+
 /* List Teknisi */
 
      .card.list_teknisi {

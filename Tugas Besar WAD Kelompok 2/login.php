@@ -29,17 +29,17 @@ if (isset($_POST['userLogin'])) {
 <body>
 
     <!--Batas TOP NAV-->
-    <nav class="top navbar navbar-light fixed-top">
-    <a class="navbar-brand" href="#">
-      <img class="logo_navbar" src="gambar\logo.png" alt=""> FindTechnician </a>
-</nav><br><br>
+    <div class="top container-fluid fixed-top ">
+        <a class="navbar-brand" href="#">
+            <img class="logo_navbar" src="gambar\logo.png" alt=""> FindTechnician </a>
+    </div> <br>
     <!--Batas TOP NAV-->
 
-    
+
 
     <div class="isi_body">
-    <div class="container">
-            <form action="" method="POST" style="margin-left: 350px; margin-right: 350px; margin-top:50px;">
+        <div class="container">
+            <form action="" method="POST" style="margin-left: 350px; margin-right: 350px;">
                 <div class="shadow p-3 mb-5 bg-white rounded">
                     <h2 align="center">Login User </h2><br>
 
@@ -52,9 +52,9 @@ if (isset($_POST['userLogin'])) {
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" class="form-control" autocomplete="off">
                     </div>
-                    <div class="form-group text-center" >
+                    <div class="form-group text-center">
                         <button class="btn btn-primary" name="userLogin">Login</button><br>
-                        <label>Belum punya akun ?</label><a href="regist_user.php"> Klik disini.</a> 
+                        <label>Belum punya akun ?</label><a href="regist_user.php"> Klik disini.</a>
                     </div>
                     <div class="login_sebagai text-center">
                         <a href="login_teknisi.php">Login sebagai Teknisi</a> /
@@ -68,8 +68,8 @@ if (isset($_POST['userLogin'])) {
                     </div>
             </form>
         </div>
-            </div>
-    
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
