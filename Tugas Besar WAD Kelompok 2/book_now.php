@@ -76,12 +76,25 @@ if (isset($_POST['Book'])) {
 
           <div class="col-3">
             <h5>Detail Teknisi</h5><br>
+            <?php
+            $idTech = $data['id'];
+            $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$idTech' AND rating!='null'");
+            $dev = mysqli_num_rows($query);
+            $result = mysqli_fetch_assoc($query);
+            $x = 0;
+            if ($dev != null) {
+              foreach ($query as $q) {
+                $x = $q['rating'] + $x;
+              }
+              $x = $x / $dev;
+            }
+            ?>
             <p>
               Nama : <?= $data['nama']; ?><br>
               <hr>
               No Telfon : <?= $data['no_hp']; ?><br>
               <hr>
-              Rating : nope<br>
+              Rating : <?php echo number_format($x, 1) ?><br>
               <hr>
               Kategori : <?= $data['expertise']; ?><br>
               <hr>

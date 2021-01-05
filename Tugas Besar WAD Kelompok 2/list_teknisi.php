@@ -98,10 +98,9 @@ if (!isset($_SESSION['userLogin'])) {
                               $x = $q['rating'] + $x;
                             }
                             $x = $x / $dev;
+                          }
                           ?>
-                          <?php
-                          } ?>
-                          <?= $x; ?>
+                          <?php echo number_format($x, 1) ?>
                         </span>
                       </div>
                     </div>
