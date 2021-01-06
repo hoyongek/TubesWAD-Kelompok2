@@ -106,6 +106,12 @@ if (isset($_POST['Book'])) {
             <h5>Masukkan Keluhan Anda</h5><br>
             <form action="" method="POST">
               <textarea class="form-control" name="deskripsi" rows="5"></textarea>
+
+            <br>
+              
+            <h5>Masukkan Harga</h5><br>
+            <form action="" method="POST">
+              <textarea class="form-control" name="deskripsi" rows="5"></textarea>
           </div>
 
           <div class="btn" style="margin-left:800px">

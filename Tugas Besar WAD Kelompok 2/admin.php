@@ -10,6 +10,16 @@ if (!isset($_SESSION['adminLogin'])) {
   exit;
 }
 ?>
+<?php
+include("config.php");
+
+$result2 = mysqli_query($mysqli, "SELECT * FROM laporan ORDER BY id DESC");
+
+if (!isset($_SESSION['adminLogin'])) {
+  header("Location: login_admin.php");
+  exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +87,41 @@ if (!isset($_SESSION['adminLogin'])) {
             </table>
 
             <a href="add.php" button type="button" class="btn ADD btn-success">Tambah
+                Data</button></a>
+        </div>
+<br><br>
+<!--Daftar Laporan-->
+
+        <div class="container" align="center">
+            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan</h2><br>
+
+            <table class="table">
+
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Teknisi</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Laporan</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <?php
+
+        while ($laporan = mysqli_fetch_array($result2)) {
+          echo "<tr>";
+          echo "<td>" . $laporan['id'] . "</td>";
+          echo "<td>" . $laporan['email'] . "</td>";
+          echo "<td>" . $laporan['nama'] . "</td>";
+          echo "<td>" . $laporan['laporan'] . "</td>";
+          echo "<td><a href='edit_laporan.php?id=$laporan[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete_laporan.php?id=$laporan[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
+        }
+        ?>
+            </table>
+
+            <a href="add_laporan.php" button type="button" class="btn ADD btn-success">Tambah
                 Data</button></a>
         </div>
     </div>

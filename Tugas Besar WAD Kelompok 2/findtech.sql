@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2020 at 06:23 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Waktu pembuatan: 06 Jan 2021 pada 16.34
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `nama`, `username`, `password`, `gambar`, `roles`) VALUES
@@ -46,7 +46,47 @@ INSERT INTO `admin` (`id`, `nama`, `username`, `password`, `gambar`, `roles`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
+-- Struktur dari tabel `data_technisian`
+--
+
+CREATE TABLE `data_technisian` (
+  `id` int(10) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `data_technisian`
+--
+
+INSERT INTO `data_technisian` (`id`, `nama`, `email`, `password`) VALUES
+(1, 'test', 'test@test.com', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id` int(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `laporan` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id`, `email`, `nama`, `laporan`) VALUES
+(1, 'test@test.com', 'test', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pesan`
 --
 
 CREATE TABLE `pesan` (
@@ -60,7 +100,7 @@ CREATE TABLE `pesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pesan`
+-- Dumping data untuk tabel `pesan`
 --
 
 INSERT INTO `pesan` (`id`, `description`, `id_user`, `id_technician`, `status`, `review`, `rating`) VALUES
@@ -72,7 +112,7 @@ INSERT INTO `pesan` (`id`, `description`, `id_user`, `id_technician`, `status`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `technician`
+-- Struktur dari tabel `technician`
 --
 
 CREATE TABLE `technician` (
@@ -88,7 +128,7 @@ CREATE TABLE `technician` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `technician`
+-- Dumping data untuk tabel `technician`
 --
 
 INSERT INTO `technician` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`, `expertise`) VALUES
@@ -99,7 +139,7 @@ INSERT INTO `technician` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -114,26 +154,39 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `no_hp`, `alamat`, `gambar`, `roles`) VALUES
 (1, 'user', 'user@test', 'user', '080912391', 'Jl. Sukapura', '344170661_peace.jpg', 'User'),
 (2, 'coba', 'coba@user', 'coba', '1928031', NULL, NULL, 'User'),
-(3, 'tambah', 'tambah@user', 'tambah', '0132891', NULL, NULL, 'User');
+(3, 'tambah', 'tambah@user', 'tambah', '0132891', NULL, NULL, 'User'),
+(7, 'teknisi', 'teknisi@teknisi.com', 'teknisi', NULL, NULL, NULL, 'User');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pesan`
+-- Indeks untuk tabel `data_technisian`
+--
+ALTER TABLE `data_technisian`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`id`),
@@ -141,51 +194,63 @@ ALTER TABLE `pesan`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `technician`
+-- Indeks untuk tabel `technician`
 --
 ALTER TABLE `technician`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pesan`
+-- AUTO_INCREMENT untuk tabel `data_technisian`
+--
+ALTER TABLE `data_technisian`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `technician`
+-- AUTO_INCREMENT untuk tabel `technician`
 --
 ALTER TABLE `technician`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `pesan`
+-- Ketidakleluasaan untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`id_technician`) REFERENCES `technician` (`id`),
