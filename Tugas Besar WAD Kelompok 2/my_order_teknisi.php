@@ -71,6 +71,8 @@ $idTech = $_SESSION['id'];
               <th scope="col">Booking ID</th>
               <th scope="col">Nama User</th>
               <th scope="col">Alamat</th>
+              <th scope="col">Keluhan</th>
+              <th scope="col">Harga</th>
               <th scope="col">Status Pesanan</th>
               <th scope="col">Action</th>
             </tr>
@@ -97,18 +99,6 @@ $idTech = $_SESSION['id'];
                     <?php if ($d['status'] != 'Menunggu Konfirmasi') { ?>
 
                       <button type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-update-status" id="modal">Update Status</button>
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".modal-lihat-keluhan" id="modal">Lihat Keluhan</button>
-
-                      <!--Modal Lihat Keluhan-->
-                      <div class="modal fade modal-lihat-keluhan" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content" style="padding:20px;">
-                            <h5>Keluhan</h5>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $d['id']; ?></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <!--Modal Lihat Keluhan-->
 
                       <!--Modal Update Status-->
                       <div class="modal fade modal-update-status" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -155,6 +145,7 @@ $idTech = $_SESSION['id'];
               <th scope="col">Booking ID</th>
               <th scope="col">Nama User</th>
               <th scope="col">Alamat</th>
+              <th scope="col">Harga</th>
               <th scope="col">Status Pesanan</th>
               <th scope="col">Action</th>
             </tr>
@@ -217,6 +208,7 @@ $idTech = $_SESSION['id'];
               <th scope="col">Booking ID</th>
               <th scope="col">Nama Teknisi</th>
               <th scope="col">Alamat</th>
+              <th scope="col">Harga</th>
               <th scope="col">Status Pesanan</th>
             </tr>
           </thead>

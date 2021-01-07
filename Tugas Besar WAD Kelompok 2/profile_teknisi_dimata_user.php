@@ -87,7 +87,7 @@ if (!empty($data['gambar'])) {
   </div>
   <!--Batas TOP NAV-->
   <div class="isi_body">
-    <h1 style="text-align: center;" class="display-4">Profile Teknisi Dimata User</h1><br>
+    <h1 style="text-align: center;" class="display-4">Profile Teknisi</h1><br>
     <div class="container">
       <div class="shadow p-5 bg-white rounded">
         <div class="row">
@@ -104,8 +104,6 @@ if (!empty($data['gambar'])) {
               <h5>
                 Teknisi Listrik
               </h5>
-              <p class="proile-rating">Rating Aplikasi : <span>8/10</span></p>
-              <p class="proile-rating">Tanggal Daftar: <span>8/10</span></p>
             </div>
           </div>
           <div class="col-md-5 profile_user_statistik">

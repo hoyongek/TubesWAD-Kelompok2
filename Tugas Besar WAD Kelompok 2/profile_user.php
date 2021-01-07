@@ -105,8 +105,6 @@ if (!empty($data['gambar'])) {
                             <h5>
                                 Teknisi Listrik
                             </h5>
-                            <p class="proile-rating">Rating Aplikasi : <span>8/10</span></p>
-                            <p class="proile-rating">Tanggal Daftar: <span>8/10</span></p>
                         </div>
                     </div>
                     <div class="col-md-5 profile_user_statistik">
@@ -243,10 +241,6 @@ if (!empty($data['gambar'])) {
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                             aria-controls="home" aria-selected="true">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                            aria-controls="profile" aria-selected="false">History</a>
                     </li>
                 </ul>
                 <div class="col-md-12">

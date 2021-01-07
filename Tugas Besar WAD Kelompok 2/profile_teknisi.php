@@ -101,8 +101,6 @@ if (!empty($data['gambar'])) {
               <h5>
                 Teknisi Listrik
               </h5>
-              <p class="proile-rating">Rating Aplikasi : <span>8/10</span></p>
-              <p class="proile-rating">Tanggal Daftar: <span>8/10</span></p>
             </div>
           </div>
           <div class="col-md-5 profile_user_statistik">
