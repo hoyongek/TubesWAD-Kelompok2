@@ -263,11 +263,15 @@ if (!empty($data['gambar'])) {
                 $user = "SELECT * FROM user WHERE id='$idU'";
                 $nama = mysqli_query($conn, $user);
                 $u = mysqli_fetch_assoc($nama);
+                $gambar = "noprofile.jpg";
+                if (!empty($u['gambar'])) {
+                  $gambar = $u['gambar'];
+                }
               ?>
                 <div class="shadow p-3 mb-5 bg-white rounded">
                   <div class="row" style="background: white; padding-left:10px;">
                     <div class="col-sm-1">
-                      <img src="gambar/noprofile.jpg" alt="" class="rounded-circle" width="75" height="75">
+                      <img src="gambar/user/<?= $gambar; ?>" alt="" class="rounded-circle" width="75" height="75">
                     </div>
                     <div class="col-sm-3">
                       <h4><?= $u['nama']; ?></h4> <span> Rating : <?= $r['rating']; ?> </span>
