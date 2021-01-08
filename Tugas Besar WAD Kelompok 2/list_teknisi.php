@@ -1,16 +1,17 @@
 <?php
 include "function.php";
-$query = "SELECT * FROM technician";
-$conn = koneksi();
-$result = mysqli_query($conn, $query);
-$data = mysqli_fetch_assoc($result);
-$dataExpertise = explode(',', $data['expertise']);
 
 session_start();
 if (!isset($_SESSION['userLogin'])) {
   header("Location: login.php");
   exit;
 }
+
+$query = "SELECT * FROM technician";
+$conn = koneksi();
+$result = mysqli_query($conn, $query);
+$data = mysqli_fetch_assoc($result);
+$dataExpertise = explode(',', $data['expertise']);
 ?>
 
 <!DOCTYPE html>

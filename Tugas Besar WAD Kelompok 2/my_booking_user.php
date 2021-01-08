@@ -92,7 +92,7 @@ $idUser = $_SESSION['id'];
                 <tr>
                   <th scope="row"><?= $d['id']; ?></th>
                   <td><?= $data['nama']; ?></td>
-                  <td>Belum diset</td>
+                  <td><?= $d['harga']; ?></td>
                   <td><?= $d['status']; ?></td>
                   <td>
                     <?php if ($d['status'] == 'Menunggu Konfirmasi') { ?>
@@ -145,6 +145,9 @@ $idUser = $_SESSION['id'];
                   <td><?= $data['alamat']; ?></td>
                   <td><?= $d['status']; ?></td>
                   <td>
+                    <?php if ($d['rating'] != null) {
+                      echo "Sudah di review";
+                    } ?>
                     <?php if ($d['status'] != 'Ditolak' && $d['rating'] == null) { ?>
                       <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".modal-review" id="modal">Berikan Ulasan</button>
                       <!--Modal-->

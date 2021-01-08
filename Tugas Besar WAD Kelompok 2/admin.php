@@ -1,24 +1,26 @@
 <?php
 session_start();
 
-include("config.php");
-
-$result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY id DESC");
-
-if (!isset($_SESSION['adminLogin'])) {
-  header("Location: login_admin.php");
-  exit;
-}
-?>
-<?php
-include("config.php");
-
-$result2 = mysqli_query($mysqli, "SELECT * FROM laporan ORDER BY id DESC");
+include("function.php");
+$conn = koneksi();
 
 if (!isset($_SESSION['adminLogin'])) {
   header("Location: login_admin.php");
   exit;
 }
+
+if (!isset($_SESSION['adminLogin'])) {
+  header("Location: login_admin.php");
+  exit;
+}
+
+$conn = koneksi();
+$query1 = "SELECT * FROM user";
+$result1 = mysqli_query($conn, $query1);
+$query2 = "SELECT * FROM technician";
+$result2 = mysqli_query($conn, $query2);
+$query3 = "SELECT * FROM laporan";
+$result3 = mysqli_query($conn, $query3);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +33,7 @@ if (!isset($_SESSION['adminLogin'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <title>Daftar User</title>
+  <title>Dashboard Admin</title>
 </head>
 
 <body>
@@ -49,117 +51,81 @@ if (!isset($_SESSION['adminLogin'])) {
         <a class="dropdown-item" href="logout.php">Log Out</a>
       </div>
     </div>
-    <!--Batas TOP NAV-->
+  </div>
+  <!--Batas TOP NAV-->
 
-    <div class="isi_body">
-      <!--Daftar User-->
-
-      <div class="container" align="center">
-
-        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar User</h2><br>
-
-        <table class="table">
-
-
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID User</th>
-              <th scope="col">Email</th>
-              <th scope="col">Password</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-
-          <?php
-
-          while ($user_data = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $user_data['nama'] . "</td>";
-            echo "<td>" . $user_data['email'] . "</td>";
-            echo "<td>" . $user_data['password'] . "</td>";
-            echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-          }
-          ?>
-        </table>
-      </div>
-      <br><br>
-
-      <!--Daftar User-->
-
-      <!--Daftar Teknisi-->
-
-      <div class="container" align="center">
-
-        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
-
-        <table class="table">
-
-
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID Teknisi</th>
-              <th scope="col">Email</th>
-              <th scope="col">Password</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-
-          <?php
-
-          while ($user_data = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $user_data['nama'] . "</td>";
-            echo "<td>" . $user_data['email'] . "</td>";
-            echo "<td>" . $user_data['password'] . "</td>";
-            echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-          }
-          ?>
-        </table>
-      </div>
-      <br><br>
-
-
-
-      <!--Daftar Teknisi-->
-
-
-      <!--Daftar Daftar Laporan-->
-
-      <div class="container" align="center">
-
-        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan </h2><br>
-
-        <table class="table">
-
-
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID Teknisi</th>
-              <th scope="col">ID Pelapor</th>
-              <th scope="col">Keluhan</th>
-
-            </tr>
-          </thead>
-
-
-
-
+  <div class="isi_body">
+    <div class="container" align="center">
+      <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar User</h2><br>
+      <table class="table">
+        <thead class="thead-dark">
           <tr>
-            <td> Tes </td>
-            <td> Tes </td>
-            <td> Tes </td>
+            <th scope="col">ID User</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Action</th>
           </tr>
+        </thead>
 
-
-
-        </table>
-      </div>
-
-
-
-      <!--Daftar Daftar Laporan-->
-
-
+        <?php foreach ($result1 as $d) { ?>
+          <tr>
+            <td><?= $d['id']; ?></td>
+            <td><?= $d['email']; ?></td>
+            <td><?= $d['password']; ?></td>
+            <td>
+              <a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>
+              <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a>
+            </td>
+          </tr>
+        <?php } ?>
+      </table>
+    </div>
+    <br><br>
+    <div class="container" align="center">
+      <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID Teknisi</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <?php foreach ($result2 as $d) { ?>
+          <tr>
+            <td><?= $d['id']; ?></td>
+            <td><?= $d['email']; ?></td>
+            <td><?= $d['password']; ?></td>
+            <td>
+              <a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>
+              <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a>
+            </td>
+          </tr>
+        <?php } ?>
+      </table>
+    </div>
+    <br><br>
+    <div class="container" align="center">
+      <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan </h2><br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID Laporan</th>
+            <th scope="col">ID Teknisi</th>
+            <th scope="col">ID Pelapor</th>
+            <th scope="col">Keluhan</th>
+          </tr>
+        </thead>
+        <?php foreach ($result3 as $d) { ?>
+          <tr>
+            <td><?= $d['id']; ?></td>
+            <td><?= $d['id_technician']; ?></td>
+            <td><?= $d['id_user']; ?></td>
+            <td><?= $d['laporan']; ?></td>
+          </tr>
+        <?php } ?>
+      </table>
     </div>
   </div>
 

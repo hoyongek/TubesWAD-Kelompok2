@@ -289,9 +289,10 @@ function pesan($data)
   $id_user = ($data['id_user']);
   $id_technician = ($data['id_technician']);
   $deskripsi = $data['deskripsi'];
+  $harga = $data['harga'];
 
   $querry = "INSERT INTO pesan VALUES
-						(null, '$deskripsi', '$id_user', '$id_technician', 'Menunggu Konfirmasi', null, null)";
+						(null, '$deskripsi', '$id_user', '$id_technician', 'Menunggu Konfirmasi', null, null, '$harga')";
 
   mysqli_query($conn, $querry) or die(mysqli_error($conn));
   if (mysqli_affected_rows($conn) > 0) {
@@ -375,6 +376,23 @@ function konfirmasiPesan($data)
   if (mysqli_affected_rows($conn) > 0) {
     echo "<script>
 					alert('Ulasan berhasil ditambahkan!');
+					document.location.href = 'my_booking_user.php';
+          </script>";
+  }
+}
+
+function lapor($data)
+{
+  $conn = koneksi();
+  $id_user = $data['id_user'];
+  $id_tech = $data['id_tech'];
+  $laporan = $data['laporan'];
+
+  $querry = "INSERT INTO laporan VALUES (null, '$id_user', '$id_tech', '$laporan')";
+  mysqli_query($conn, $querry) or die(mysqli_error($conn));
+  if (mysqli_affected_rows($conn) > 0) {
+    echo "<script>
+					alert('Laporan berhasil ditambahkan!');
 					document.location.href = 'my_booking_user.php';
           </script>";
   }

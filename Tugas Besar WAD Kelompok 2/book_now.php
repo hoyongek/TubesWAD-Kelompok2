@@ -110,7 +110,7 @@ if (isset($_POST['Book'])) {
               <h5>Masukkan Harga</h5>
               <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping">Rp.</span>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" name="harga">
               </div>
           </div>
 
