@@ -34,13 +34,14 @@ if (isset($_POST['regis'])) {
 
 <body>
     <!--Batas TOP NAV-->
-    <nav class="top navbar navbar-light fixed-top">
+    <div class="top container-fluid fixed-top">
         <a class="navbar-brand" href="#">
             <img class="logo_navbar" src="gambar\logo.png" alt=""> FindTechnician </a>
-        <form class="d-flex">
-            <a href="login.php"> Login</a>
-        </form>
-    </nav><br><br>
+
+
+        <a style="margin-left: 1000px;" href="login.php"> Login</a>
+
+    </div>
     <!--Batas TOP NAV-->
 
 

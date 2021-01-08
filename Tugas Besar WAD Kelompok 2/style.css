@@ -1,5 +1,10 @@
 .top {
         background-color:white;
+        margin-left: 20px;
+    }
+
+    .a {
+        margin-left: 20px;
     }
 
     .dropdown {
@@ -52,6 +57,7 @@
         background-color:#F8F8F8;
         margin-top: 60px;
         padding-top: 20px;
+       
     }
 
 /* List Teknisi */
