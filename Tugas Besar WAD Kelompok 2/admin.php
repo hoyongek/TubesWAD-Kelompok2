@@ -73,8 +73,9 @@ $result3 = mysqli_query($conn, $query3);
             <td><?= $d['email']; ?></td>
             <td><?= $d['password']; ?></td>
             <td>
-              <a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>
-              <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a>
+              <?php $id = $d['id'] ?>
+              <a href='edit.php?id=<?= $d['id']; ?>' button type='button' class='btn btn-info'> Edit</a>
+              <a href='delete.php?id=<?= $d['id']; ?>' button type='button' class='btn btn-danger'>Delete</a>
             </td>
           </tr>
         <?php } ?>
@@ -98,8 +99,9 @@ $result3 = mysqli_query($conn, $query3);
             <td><?= $d['email']; ?></td>
             <td><?= $d['password']; ?></td>
             <td>
-              <a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>
-              <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a>
+              <?php $id = $d['id'] ?>
+              <a href='edit_tech.php?id=<?= $d['id']; ?>' button type='button' class='btn btn-info'> Edit</a>
+              <a href='delete_data_teknisi.php?id=<?= $d['id']; ?>' button type='button' class='btn btn-danger'>Delete</a>
             </td>
           </tr>
         <?php } ?>

@@ -1,12 +1,17 @@
 <?php
 // include database connection file
-include("config.php");
+include("function.php");
+$conn = koneksi();
 
 // Get id from URL to delete that user
 $id = $_GET['id'];
 
 // Delete user row from table based on given id
-$result = mysqli_query($mysqli, "DELETE FROM data_technisian WHERE id=$id");
-
-// After delete redirect to Home, so that latest user list will be displayed.
-header("Location:data_teknisi.php");
+$querry = "DELETE FROM technician WHERE id=$id";
+mysqli_query($conn, $querry) or die(mysqli_error($conn));
+if (mysqli_affected_rows($conn) > 0) {
+  echo "<script>
+					alert('Data berhasil di hapus');
+					document.location.href = 'admin.php';
+          </script>";
+}

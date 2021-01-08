@@ -17,7 +17,7 @@ if (isset($_POST['update'])) {
   $password = $_POST['password'];
 
   // update user data
-  $result = mysqli_query($conn, "UPDATE user SET email='$email', password='$password' WHERE id=$id");
+  $result = mysqli_query($conn, "UPDATE technician SET email='$email', password='$password' WHERE id=$id");
 
   // Redirect to homepage to display updated user in list
   if (mysqli_affected_rows($conn) > 0) {
@@ -34,7 +34,7 @@ if (isset($_POST['update'])) {
 $id = $_GET['id'];
 
 // Fetech user data based on id
-$result = mysqli_query($conn, "SELECT * FROM user WHERE id=$id");
+$result = mysqli_query($conn, "SELECT * FROM technician WHERE id=$id");
 $data = mysqli_fetch_assoc($result);
 $email = $data['email'];
 $password = $data['password'];

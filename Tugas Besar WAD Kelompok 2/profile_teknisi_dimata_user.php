@@ -22,7 +22,13 @@ if (isset($_POST['update'])) {
 }
 
 if (isset($_POST['lapor'])) {
-  lapor($_POST);
+  if ($_POST['laporan'] == null) {
+    $id = $_GET['id'];
+    echo "<script>alert('Isi laporan kosong!')
+        document.location.href = 'profile_teknisi_dimata_user.php?id=$id'</script>";
+  } else {
+    lapor($_POST);
+  }
 }
 
 $id = $_GET['id'];
