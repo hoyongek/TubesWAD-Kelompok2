@@ -85,9 +85,6 @@ if (!isset($_SESSION['adminLogin'])) {
         }
         ?>
             </table>
-
-            <a href="add.php" button type="button" class="btn ADD btn-success">Tambah
-                Data</button></a>
         </div>
 <br><br>
 <!--Daftar Laporan-->
@@ -120,11 +117,38 @@ if (!isset($_SESSION['adminLogin'])) {
         }
         ?>
             </table>
-
-            <a href="add_laporan.php" button type="button" class="btn ADD btn-success">Tambah
-                Data</button></a>
         </div>
     </div>
+
+<!--Daftar Teknisi-->
+<div class="container" align="center">
+            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
+
+            <table class="table">
+
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <?php
+
+        while ($user_data = mysqli_fetch_array($result)) {
+          echo "<tr>";
+          echo "<td>" . $user_data['nama'] . "</td>";
+          echo "<td>" . $user_data['email'] . "</td>";
+          echo "<td>" . $user_data['password'] . "</td>";
+          echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
+        }
+        ?>
+            </table>
+        </div>
+<br><br>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

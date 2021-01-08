@@ -99,11 +99,6 @@ $password = $data['password'];
                 </div>
 
                 <div class="form-group">
-                    <label for="no_hp">Mobile</label>
-                    <input type="text" class="form-control" name="no_hp" value=<?php echo $no_hp; ?>>
-                </div>
-
-                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="text" class="form-control" name="password" value=<?php echo $password; ?>>
                 </div>
