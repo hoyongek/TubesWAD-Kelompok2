@@ -91,6 +91,7 @@ if (isset($_POST['Book'])) {
               $x = $x / $dev;
             }
             ?>
+<<<<<<< HEAD
                         <p>
                             Nama : <?= $data['nama']; ?><br>
                             <hr>
@@ -127,6 +128,37 @@ if (isset($_POST['Book'])) {
                         </div>
                     </div>
                 </div>
+=======
+            <p>
+              Nama : <?= $data['nama']; ?><br>
+              <hr>
+              No Telfon : <?= $data['no_hp']; ?><br>
+              <hr>
+              Rating : <?php echo number_format($x, 1) ?><br>
+              <hr>
+              Kategori : <?= $data['expertise']; ?><br>
+              <hr>
+              Alamat Teknisi <?= $data['alamat']; ?>
+            </p>
+          </div>
+
+          <div class="col-6">
+            <h5>Masukkan Keluhan Anda</h5><br>
+            <form action="" method="POST">
+              <textarea class="form-control" name="deskripsi" rows="5"></textarea>
+              <br>
+              <h5>Masukkan Harga</h5><br>
+              <input type="number" name="harga" class="form-control">
+          </div>
+
+          <div class="btn" style="margin-left:800px">
+            <div class="row">
+              <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
+              <input type="hidden" name="id_user" value="<?= $id_user; ?>">
+              <input type="hidden" name="id_technician" value="<?= $data['id']; ?>">
+              <input type="submit" class="btn btn-primary" value="Book Now" name="Book">
+              </form>
+>>>>>>> 0b01f1e7c6ee2555ca56cd19db5ae7a0563b569b
             </div>
         </div>
     </div>
