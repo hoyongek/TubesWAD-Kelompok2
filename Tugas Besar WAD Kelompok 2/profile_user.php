@@ -97,7 +97,7 @@ if (!empty($data['gambar'])) {
                             <img class="rounded profile" src="gambar/user/<?= $gambar; ?>">
                         </div>
                     </div>
-                    <div class=" col-md-2">
+                    <div class=" col-md-2 " style="margin-top:60px;">
                         <div class="profile-head">
                             <h4>
                                 <?= $data['nama']; ?>
@@ -107,7 +107,7 @@ if (!empty($data['gambar'])) {
                             </h5>
                         </div>
                     </div>
-                    <div class="col-md-5 profile_user_statistik">
+                    <div class="col-md-5 profile_user_statistik" style="margin-top:60px;">
                         <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
                             <div class="d-flex flex-column"> <span class="tugas_selesai">Pesanan Selesai</span>
                                 <span class="number1">38</span>
@@ -118,18 +118,10 @@ if (!empty($data['gambar'])) {
                                 <span class="number3">8.9</span>
                             </div>
                         </div>
-                        <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
-                            <div class="d-flex flex-column"> <span class="tugas_selesai">Points</span>
-                                <span class="number1">1000</span>
-                            </div>
-                            <div class="d-flex flex-column"> <span class="followers">Followers</span> <span
-                                    class="number2">980</span> </div>
-                            <div class="d-flex flex-column"> <span class="rating">Following</span> <span
-                                    class="number3">8.9</span> </div>
-                        </div>
+
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2" style="margin-top:60px;">
                         <!--Modal-->
                         <button type="button" class="profile-edit-btn" data-toggle="modal"
                             data-target=".bd-example-modal-lg" id="modal">Edit Profile</button>
@@ -237,6 +229,7 @@ if (!empty($data['gambar'])) {
                         <!--Modal-->
                     </div>
                 </div>
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"

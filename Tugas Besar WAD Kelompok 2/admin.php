@@ -58,8 +58,10 @@ if (!isset($_SESSION['adminLogin'])) {
     <!--Batas TOP NAV-->
 
     <div class="isi_body">
+        <!--Daftar User-->
 
         <div class="container" align="center">
+
             <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar User</h2><br>
 
             <table class="table">
@@ -67,7 +69,7 @@ if (!isset($_SESSION['adminLogin'])) {
 
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col">ID User</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
                         <th scope="col">Action</th>
@@ -86,11 +88,15 @@ if (!isset($_SESSION['adminLogin'])) {
         ?>
             </table>
         </div>
-<br><br>
-<!--Daftar Laporan-->
+        <br><br>
+
+        <!--Daftar User-->
+
+        <!--Daftar Teknisi-->
 
         <div class="container" align="center">
-            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan</h2><br>
+
+            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
 
             <table class="table">
 
@@ -99,38 +105,6 @@ if (!isset($_SESSION['adminLogin'])) {
                     <tr>
                         <th scope="col">ID Teknisi</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Laporan</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-
-                <?php
-
-        while ($laporan = mysqli_fetch_array($result2)) {
-          echo "<tr>";
-          echo "<td>" . $laporan['id'] . "</td>";
-          echo "<td>" . $laporan['email'] . "</td>";
-          echo "<td>" . $laporan['nama'] . "</td>";
-          echo "<td>" . $laporan['laporan'] . "</td>";
-          echo "<td><a href='edit_laporan.php?id=$laporan[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete_laporan.php?id=$laporan[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-        }
-        ?>
-            </table>
-        </div>
-    </div>
-
-<!--Daftar Teknisi-->
-<div class="container" align="center">
-            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
-
-            <table class="table">
-
-
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
                         <th scope="col">Password</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -148,7 +122,53 @@ if (!isset($_SESSION['adminLogin'])) {
         ?>
             </table>
         </div>
-<br><br>
+        <br><br>
+
+
+
+        <!--Daftar Teknisi-->
+
+
+        <!--Daftar Daftar Laporan-->
+
+        <div class="container" align="center">
+
+            <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan </h2><br>
+
+            <table class="table">
+
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Teknisi</th>
+                        <th scope="col">ID Pelapor</th>
+                        <th scope="col">Keluhan</th>
+
+                    </tr>
+                </thead>
+
+
+
+
+                <tr>
+                    <td> Tes </td>
+                    <td> Tes </td>
+                    <td> Tes </td>
+                </tr>
+
+
+
+            </table>
+        </div>
+
+
+
+        <!--Daftar Daftar Laporan-->
+
+
+    </div>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
