@@ -136,6 +136,16 @@ if (!empty($data['gambar'])) {
                         <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
                       </div>
                     </div>
+<<<<<<< HEAD
+                    <div class=" col-md-2 " style="margin-top:60px;">
+                        <div class="profile-head">
+                            <h4>
+                                <?= $data['nama']; ?>
+                            </h4>
+                            <h5>
+                                Teknisi Listrik
+                            </h5>
+=======
                     <div class="modal-body">
                       <div class="form-group">
                         <input type="email" class="form-control" name="email" readonly value="<?= $data['email']; ?>">
@@ -157,21 +167,143 @@ if (!empty($data['gambar'])) {
                           <div class="col">
                             <input type="password" class="form-control" placeholder="Tulis Ulang Password Anda" name="pw" value="<?= $data['password']; ?>" required>
                           </div>
+>>>>>>> 0b01f1e7c6ee2555ca56cd19db5ae7a0563b569b
                         </div>
                       </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="col-md-5 profile_user_statistik" style="margin-top:60px;">
+                        <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
+                            <div class="d-flex flex-column"> <span class="tugas_selesai">Pesanan Selesai</span>
+                                <span class="number1">38</span>
+                            </div>
+                            <div class="d-flex flex-column"> <span class="followers">Jumlah Feedback</span> <span
+                                    class="number2">980</span> </div>
+                            <div class="d-flex flex-column"> <span class="rating">Pesanan Di Cancel</span>
+                                <span class="number3">8.9</span>
+                            </div>
+                        </div>
+
+=======
                     <div class="modal-footer">
                       <div class="form-group">
                         <button type="submit" name="cancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         <input type="hidden" name="id" value="<?= $_SESSION['id']; ?>">
                         <input type="submit" name="update" class="btn btn-primary" value="Update">
                       </div>
+>>>>>>> 0b01f1e7c6ee2555ca56cd19db5ae7a0563b569b
                     </div>
                   </form>
                 </div>
               </div>
             </div>
 
+<<<<<<< HEAD
+                    <div class="col-md-2" style="margin-top:60px;">
+                        <!--Modal-->
+                        <button type="button" class="profile-edit-btn" data-toggle="modal"
+                            data-target=".bd-example-modal-lg" id="modal">Edit Profile</button>
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content" style="padding:20px;">
+                                    <form action="" method="POST">
+                                        <div class="modal-header">
+                                            <div class="form-group">
+                                                <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" readonly
+                                                    value="<?= $data['email']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Name" name="nama"
+                                                    value="<?= $data['nama']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="No HP"
+                                                    name="no_hp" value="<?= $data['no_hp']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="alamat" rows="3"
+                                                    placeholder="Alamat Anda"
+                                                    required><?= $data['alamat']; ?></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Password" name="password"
+                                                            value="<?= $data['password']; ?>" required>
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Tulis Ulang Password Anda" name="pw"
+                                                            value="<?= $data['password']; ?>" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="form-group">
+                                                <button type="submit" name="cancel" class="btn btn-danger"
+                                                    data-dismiss="modal">Cancel</button>
+                                                <input type="hidden" name="id" value="<?= $_SESSION['id']; ?>">
+                                                <input type="submit" name="update" class="btn btn-primary"
+                                                    value="Update">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="profile-edit-btn" data-toggle="modal" data-target=".modal2"
+                            id="modal">Change Photo</button>
+                        <div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content" style="padding:20px;">
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                        <div class="modal-header">
+                                            <div class="form-group">
+                                                <label>Upload Photo</label>
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="hidden" name="gambarLama" value="<?= $data['gambar']; ?>">
+                                                <input type="hidden" name="roles" value="<?= $data['roles']; ?>">
+                                                <input type="hidden" name="id" value="<?= $data['id']; ?>">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="gambar"
+                                                        name="gambar" required>
+                                                    <label class="custom-file-label"
+                                                        for="gambar"><?= $data['gambar']; ?></label>
+                                                </div>
+                                                <script type="application/javascript">
+                                                $('input[type="file"]').change(function(e) {
+                                                    var fileName = e.target.files[0].name;
+                                                    $('.custom-file-label').html(fileName);
+                                                });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="form-group">
+                                                <button type="submit" name="cancel" class="btn btn-danger"
+                                                    data-dismiss="modal">Cancel</button>
+                                                <input type="hidden" name="id" value="<?= $_SESSION['id']; ?>">
+                                                <input type="submit" name="updateGambar" class="btn btn-primary"
+                                                    value="Update">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+=======
             <button type="button" class="profile-edit-btn" data-toggle="modal" data-target=".modal2" id="modal">Change Photo</button>
             <div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
@@ -190,6 +322,7 @@ if (!empty($data['gambar'])) {
                         <div class="custom-file">
                           <input type="file" class="custom-file-input" id="gambar" name="gambar" required>
                           <label class="custom-file-label" for="gambar"><?= $data['gambar']; ?></label>
+>>>>>>> 0b01f1e7c6ee2555ca56cd19db5ae7a0563b569b
                         </div>
                         <script type="application/javascript">
                           $('input[type="file"]').change(function(e) {
@@ -228,6 +361,15 @@ if (!empty($data['gambar'])) {
                 <div class="col-md-6">
                   <p><?= $data['nama']; ?></p>
                 </div>
+<<<<<<< HEAD
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">About</a>
+                    </li>
+                </ul>
+=======
               </div>
               <div class="row">
                 <div class="col-md-6">
@@ -296,6 +438,7 @@ if (!empty($data['gambar'])) {
                 </div>
               </div>
               <div class="row">
+>>>>>>> 0b01f1e7c6ee2555ca56cd19db5ae7a0563b569b
                 <div class="col-md-12">
                   <label>Your Bio</label><br />
                   <p>Your detail description</p>

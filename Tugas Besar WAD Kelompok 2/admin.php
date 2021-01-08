@@ -49,105 +49,120 @@ if (!isset($_SESSION['adminLogin'])) {
         <a class="dropdown-item" href="logout.php">Log Out</a>
       </div>
     </div>
-  </div>
-  <!--Batas TOP NAV-->
+    <!--Batas TOP NAV-->
 
-  <div class="isi_body">
-    <div class="container" align="center">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Review</a>
-        </li>
-      </ul>
-      <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar User</h2><br>
-      <table class="table">
-        <thead class="thead-dark">
+    <div class="isi_body">
+      <!--Daftar User-->
+
+      <div class="container" align="center">
+
+        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar User</h2><br>
+
+        <table class="table">
+
+
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID User</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+
+          <?php
+
+          while ($user_data = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $user_data['nama'] . "</td>";
+            echo "<td>" . $user_data['email'] . "</td>";
+            echo "<td>" . $user_data['password'] . "</td>";
+            echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
+          }
+          ?>
+        </table>
+      </div>
+      <br><br>
+
+      <!--Daftar User-->
+
+      <!--Daftar Teknisi-->
+
+      <div class="container" align="center">
+
+        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
+
+        <table class="table">
+
+
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID Teknisi</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+
+          <?php
+
+          while ($user_data = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . $user_data['nama'] . "</td>";
+            echo "<td>" . $user_data['email'] . "</td>";
+            echo "<td>" . $user_data['password'] . "</td>";
+            echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
+          }
+          ?>
+        </table>
+      </div>
+      <br><br>
+
+
+
+      <!--Daftar Teknisi-->
+
+
+      <!--Daftar Daftar Laporan-->
+
+      <div class="container" align="center">
+
+        <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan </h2><br>
+
+        <table class="table">
+
+
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID Teknisi</th>
+              <th scope="col">ID Pelapor</th>
+              <th scope="col">Keluhan</th>
+
+            </tr>
+          </thead>
+
+
+
+
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Password</th>
-            <th scope="col">Action</th>
+            <td> Tes </td>
+            <td> Tes </td>
+            <td> Tes </td>
           </tr>
-        </thead>
-
-        <?php
-
-        while ($user_data = mysqli_fetch_array($result)) {
-          echo "<tr>";
-          echo "<td>" . $user_data['nama'] . "</td>";
-          echo "<td>" . $user_data['email'] . "</td>";
-          echo "<td>" . $user_data['password'] . "</td>";
-          echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-        }
-        ?>
-      </table>
-    </div>
-    <br><br>
-    <!--Daftar Laporan-->
-
-    <div class="container" align="center">
-      <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Laporan</h2><br>
-
-      <table class="table">
 
 
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID Teknisi</th>
-            <th scope="col">Email</th>
-            <th scope="col">Name</th>
-            <th scope="col">Laporan</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
 
-        <?php
+        </table>
+      </div>
 
-        while ($laporan = mysqli_fetch_array($result2)) {
-          echo "<tr>";
-          echo "<td>" . $laporan['id'] . "</td>";
-          echo "<td>" . $laporan['email'] . "</td>";
-          echo "<td>" . $laporan['nama'] . "</td>";
-          echo "<td>" . $laporan['laporan'] . "</td>";
-          echo "<td><a href='edit_laporan.php?id=$laporan[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete_laporan.php?id=$laporan[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-        }
-        ?>
-      </table>
+
+
+      <!--Daftar Daftar Laporan-->
+
+
     </div>
   </div>
 
-  <!--Daftar Teknisi-->
-  <div class="container" align="center">
-    <h2 style="text-align: center; margin: 7px 7px 7px 7px;">Daftar Teknisi</h2><br>
-
-    <table class="table">
-
-
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Password</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-
-      <?php
-
-      while ($user_data = mysqli_fetch_array($result)) {
-        echo "<tr>";
-        echo "<td>" . $user_data['nama'] . "</td>";
-        echo "<td>" . $user_data['email'] . "</td>";
-        echo "<td>" . $user_data['password'] . "</td>";
-        echo "<td><a href='edit.php?id=$user_data[id]' button type='button' class='btn btn-info'> Edit</a>  <a href='delete.php?id=$user_data[id]' button type='button' class='btn btn-danger'>Delete</a></td></tr>";
-      }
-      ?>
-    </table>
-  </div>
-  <br><br>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

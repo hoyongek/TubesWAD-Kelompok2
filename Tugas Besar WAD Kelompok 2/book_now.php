@@ -105,18 +105,21 @@ if (isset($_POST['Book'])) {
           <div class="col-6">
             <h5>Masukkan Keluhan Anda</h5><br>
             <form action="" method="POST">
-              <textarea class="form-control" name="deskripsi" rows="5"></textarea>
-              <br>
-              <h5>Masukkan Harga</h5><br>
-              <input type="number" name="harga" class="form-control">
+              <textarea class="form-control" name="deskripsi" rows="5"></textarea><br>
+
+              <h5>Masukkan Harga</h5>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Rp.</span>
+                <input type="number" class="form-control">
+              </div>
           </div>
 
-          <div class="btn" style="margin-left:800px">
+          <div class="btn" style="margin-left:800px;">
             <div class="row">
               <a href="list_teknisi.php" class="btn btn-danger">cancel</a>
               <input type="hidden" name="id_user" value="<?= $id_user; ?>">
               <input type="hidden" name="id_technician" value="<?= $data['id']; ?>">
-              <input type="submit" class="btn btn-primary" value="Book Now" name="Book">
+              <input style="margin-left:5px;" type="submit" class="btn btn-primary" value="Book Now" name="Book">
               </form>
             </div>
           </div>

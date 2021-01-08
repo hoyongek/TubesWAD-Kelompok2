@@ -82,16 +82,12 @@ $password = $data['password'];
 
     <div class="isi_body">
 
-        <h1 style="text-align: center;" class="display-4"> Edit Data !</h1>
+        <h1 style="text-align: center;" class="display-4"> Edit Data User</h1>
 
         <div class="container">
             <br>
 
             <form method="post" action="" style=" margin-left: 350px; margin-right: 350px;">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" name="nama" value=<?php echo $nama; ?>>
-                </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
