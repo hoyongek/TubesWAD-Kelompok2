@@ -109,11 +109,31 @@ if (!empty($data['gambar'])) {
           <div class="col-md-5 profile_user_statistik">
             <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
               <div class="d-flex flex-column"> <span class="tugas_selesai">Pesanan Selesai</span>
-                <span class="number1">38</span>
+                <span class="number1">
+                  <?php
+                  $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$id' AND status='Selesai'");
+                  $total = mysqli_num_rows($query);
+                  ?>
+                  <?= $total; ?>
+                </span>
               </div>
-              <div class="d-flex flex-column"> <span class="followers">Jumlah Feedback</span> <span class="number2">980</span> </div>
+              <div class="d-flex flex-column"> <span class="followers">Jumlah Feedback</span>
+                <span class="number2">
+                  <?php
+                  $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$id' AND status='Selesai' AND review!='null'");
+                  $total = mysqli_num_rows($query);
+                  ?>
+                  <?= $total; ?>
+                </span>
+              </div>
               <div class="d-flex flex-column"> <span class="rating">Pesanan Di Cancel</span>
-                <span class="number3">8.9</span>
+                <span class="number3">
+                  <?php
+                  $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$id' AND status='Ditolak'");
+                  $total = mysqli_num_rows($query);
+                  ?>
+                  <?= $total; ?>
+                </span>
               </div>
             </div>
             <div class="p-2 mt-4 bg-primary d-flex justify-content-between rounded text-white stats">
@@ -128,20 +148,15 @@ if (!empty($data['gambar'])) {
           <div class="col-md-2">
             <button type="button" class="profile-edit-btn ">Follow</button><br>
             <!--Modal-->
-
-
             <button type="button" class="profile-edit-btn" data-toggle="modal" data-target=".modal2" id="modal">Report</button>
             <div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <form>
                   <div class="modal-content" style="padding:20px;">
-
                     <div class="form-group">
                       <label>Berikan Pelaporan Anda</label>
                     </div>
-
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
                     <div class="modal-footer">
                       <div class="form-group">
                         <button type="submit" name="cancel" class="btn btn-danger" data-dismiss="modal">Cancel</button>

@@ -81,8 +81,13 @@ if (!isset($_SESSION['userLogin'])) {
                         </span>
                       </div>
                       <div class="d-flex flex-column">
-                        <span class="followers">Followers</span>
-                        <span class="number2">980</span>
+                        <span class="followers">Jumlah Feedback</span>
+                        <?php
+                        $idTech = $d['id'];
+                        $query = mysqli_query($conn, "SELECT * FROM pesan WHERE id_technician='$idTech' AND status='Selesai' AND review!='null'");
+                        $total = mysqli_num_rows($query);
+                        ?>
+                        <span class="number2"><?= $total; ?></span>
                       </div>
                       <div class="d-flex flex-column">
                         <span class="rating">Rating</span>
